@@ -20,6 +20,14 @@ test("homepage renders the complete Mantle narrative", async () => {
   assert.match(html, /See what leaves Mantle/);
   assert.match(html, /AI understands\. Policy authorises\./);
   assert.match(html, /Agent Workrooms are a product direction under development/);
+  assert.match(html, /mantle-brand-plate\.png/);
+  assert.match(html, /20\+ years/);
+  assert.match(html, /HKU MBA/);
+  for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "pilot"]) {
+    assert.match(html, new RegExp(`href="/\\#${target}"`));
+  }
+  assert.match(html, /href="https:\/\/mantlecorps\.com"/);
+  assert.doesNotMatch(html, /Alfred Lee|>Harry</);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|trusted by leading|lorem ipsum/i);
 });
 

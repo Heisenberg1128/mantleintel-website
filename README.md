@@ -46,7 +46,7 @@ All core public copy is centralized in [`content/site.ts`](content/site.ts), inc
 - capabilities and status labels
 - use cases
 - mission and vision
-- founders
+- founding-team background
 - pilot CTA
 - demo video configuration
 
@@ -54,7 +54,7 @@ Most copy changes should not require editing components.
 
 ## Updating founder biographies
 
-Edit the `founders` array in [`content/site.ts`](content/site.ts). Portraits are optional and intentionally not represented by fake silhouettes.
+Edit the `foundingTeam` object in [`content/site.ts`](content/site.ts). The public site intentionally presents the team’s relevant background without naming individual founders.
 
 ## Replacing the demo video
 

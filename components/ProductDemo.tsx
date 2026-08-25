@@ -46,9 +46,17 @@ export function ProductDemo({ video }: ProductDemoProps) {
         <div className="demo-gate"><b>KEEP</b><b>MASK</b><b>REMOVE</b></div>
         <div className="demo-panel clean"><span>Approved payload</span><i /><i /></div>
       </div>
-      <div className="demo-play" aria-hidden="true">▶</div>
+      <a
+        className="demo-play"
+        href="https://mantlecorps.com"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the live Mantle prototype in a new tab"
+      >
+        <span aria-hidden="true">▶</span>
+      </a>
       <strong>{video.title}</strong>
-      <small>Film in production</small>
+      <small>Open live prototype</small>
     </div>
   );
 }

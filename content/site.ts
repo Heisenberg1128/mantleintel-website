@@ -8,11 +8,11 @@ export const siteContent = {
     canonicalUrl: "https://mantleintel.com",
   },
   navigation: [
-    { label: "Product", href: "#product" },
-    { label: "How it works", href: "#how-it-works" },
-    { label: "Use cases", href: "#use-cases" },
-    { label: "Vision", href: "#vision" },
-    { label: "Company", href: "#company" },
+    { label: "Product", href: "/#product" },
+    { label: "How it works", href: "/#how-it-works" },
+    { label: "Use cases", href: "/#use-cases" },
+    { label: "Vision", href: "/#vision" },
+    { label: "Company", href: "/#company" },
   ],
   hero: {
     eyebrow: "The control layer for enterprise AI",
@@ -148,18 +148,29 @@ export const siteContent = {
   mission: "Make powerful AI usable inside organisations without forcing them to give up control.",
   vision:
     "A world where people and AI agents can work across organisational systems while authority, context and accountability remain governed.",
-  founders: [
-    {
-      name: "Alfred Lee",
-      role: "Co-Founder",
-      bio: "Alfred has spent his career at the intersection of emerging technology, operations and regulated finance. Before co-founding Mantle, he worked across digital assets, Web3 businesses and financial-services initiatives in Hong Kong and Asia.",
-    },
-    {
-      name: "Harry",
-      role: "Co-Founder",
-      bio: "Harry is a Co-Founder of Mantle Intelligence. Full biography coming soon.",
-    },
-  ],
+  foundingTeam: {
+    eyebrow: "Founding team",
+    headline: "Enterprise experience, grounded in Hong Kong.",
+    body:
+      "Mantle Intelligence is being built in Hong Kong by a founding team of HKU MBA students. The team brings experience across investment banking, regulated financial services, emerging technology and operations.",
+    background: [
+      {
+        label: "Investment banking",
+        value: "20+ years",
+        detail: "Senior experience across more than two decades of investment banking work.",
+      },
+      {
+        label: "Academic community",
+        value: "HKU MBA",
+        detail: "A founding team connected through the University of Hong Kong MBA community.",
+      },
+      {
+        label: "Operating context",
+        value: "Hong Kong",
+        detail: "Built from a global financial centre for organisations operating across jurisdictions.",
+      },
+    ],
+  },
   pilot: {
     eyebrow: "Pilot and design partner conversations",
     headline: "Bring one real AI workflow.",
@@ -173,4 +184,3 @@ export const siteContent = {
     origin: "Built in Hong Kong for organisations operating in a world of increasingly powerful AI.",
   },
 } as const;
-

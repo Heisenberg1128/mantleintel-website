@@ -13,7 +13,7 @@ export function Header() {
             <Link key={item.href} href={item.href}>{item.label}</Link>
           ))}
         </nav>
-        <Link className="button button-dark header-cta" href="#pilot">
+        <Link className="button button-dark header-cta" href="/#pilot">
           Request a pilot <span aria-hidden="true">↗</span>
         </Link>
         <details className="mobile-nav">
@@ -22,11 +22,10 @@ export function Header() {
             {siteContent.navigation.map((item) => (
               <Link key={item.href} href={item.href}>{item.label}</Link>
             ))}
-            <Link href="#pilot">Request a pilot</Link>
+            <Link href="/#pilot">Request a pilot</Link>
           </nav>
         </details>
       </div>
     </header>
   );
 }
-

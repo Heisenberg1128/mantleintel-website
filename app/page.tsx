@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ControlDiagram } from "../components/ControlDiagram";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { PilotCta } from "../components/PilotCta";
@@ -14,18 +13,31 @@ export default function Home() {
       <main>
         <section className="hero" id="product">
           <div className="shell hero-copy">
-            <p className="eyebrow">{c.hero.eyebrow}</p>
-            <h1>{c.hero.headline}</h1>
+            <h1 className="sr-only">Mantle Intelligence — {c.hero.headline}</h1>
+            <figure className="brand-plate">
+              {/* Static brand art avoids a client-side image runtime in the edge-hosted build. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/mantle-brand-plate.png"
+                alt="Mantle Intelligence. Let people and AI agents work. Keep authority under control. A diagram shows organisational context passing through Mantle to approved AI."
+                width={1536}
+                height={1024}
+                loading="eager"
+                fetchPriority="high"
+              />
+            </figure>
             <div className="hero-support">
-              <p>{c.hero.body}</p>
+              <div>
+                <p className="eyebrow">{c.hero.eyebrow}</p>
+                <p>{c.hero.body}</p>
+              </div>
               <div className="hero-actions">
-                <Link className="button button-dark" href="#pilot">{c.hero.primaryCta} <span aria-hidden="true">↗</span></Link>
-                <Link className="button button-ghost" href="#demo">{c.hero.secondaryCta} <span aria-hidden="true">↓</span></Link>
+                <Link className="button button-dark" href="/#pilot">{c.hero.primaryCta} <span aria-hidden="true">↗</span></Link>
+                <Link className="button button-ghost" href="/#demo">{c.hero.secondaryCta} <span aria-hidden="true">↓</span></Link>
               </div>
             </div>
             <p className="hero-note">{c.hero.note}</p>
           </div>
-          <div className="shell"><ControlDiagram /></div>
         </section>
 
         <section className="problem section-pad">
@@ -151,13 +163,17 @@ export default function Home() {
             <div className="section-heading">
               <p className="eyebrow">Company</p>
               <h2>Built with an operator’s view of governed work.</h2>
-              <p>Mantle Intelligence is being built from Hong Kong for organisations operating across increasingly powerful AI systems.</p>
+              <p>{c.foundingTeam.body}</p>
             </div>
-            <div className="founder-list">
-              {c.founders.map((founder, index) => (
-                <article key={founder.name}>
+            <div className="founder-list" aria-label="Founding team background">
+              <div className="founding-intro">
+                <p className="eyebrow">{c.foundingTeam.eyebrow}</p>
+                <h3>{c.foundingTeam.headline}</h3>
+              </div>
+              {c.foundingTeam.background.map((item, index) => (
+                <article key={item.label}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div><h3>{founder.name}</h3><small>{founder.role}</small><p>{founder.bio}</p></div>
+                  <div><small>{item.label}</small><h3>{item.value}</h3><p>{item.detail}</p></div>
                 </article>
               ))}
             </div>
@@ -170,4 +186,3 @@ export default function Home() {
     </>
   );
 }
-
