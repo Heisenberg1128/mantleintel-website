@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-async function render(path = "/") {
+async function render(path = "/", hostname = "localhost") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
   const { default: worker } = await import(workerUrl.href);
-  return worker.fetch(new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }), {
+  return worker.fetch(new Request(`https://${hostname}${path}`, { headers: { accept: "text/html" } }), {
     ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
   }, { waitUntil() {}, passThroughOnException() {} });
 }
@@ -40,3 +40,8 @@ test("SEO routes render", async () => {
   }
 });
 
+test("www requests redirect to the canonical apex hostname", async () => {
+  const response = await render("/privacy?source=www", "www.mantleintel.com");
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get("location"), "https://mantleintel.com/privacy?source=www");
+});
