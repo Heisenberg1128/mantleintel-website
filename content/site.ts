@@ -152,7 +152,7 @@ export const siteContent = {
     eyebrow: "Founding team",
     headline: "Enterprise experience, grounded in Hong Kong.",
     body:
-      "Mantle Intelligence is being built in Hong Kong by a founding team of HKU MBA students. The team brings experience across investment banking, regulated financial services, emerging technology and operations.",
+      "Mantle Intelligence is being built in Hong Kong by a founding team of HKU MBA students. The team brings experience across investment banking, regulated financial services, emerging technology, Web3 and blockchain businesses, and operations.",
     background: [
       {
         label: "Investment banking",
@@ -168,6 +168,11 @@ export const siteContent = {
         label: "Operating context",
         value: "Hong Kong",
         detail: "Built from a global financial centre for organisations operating across jurisdictions.",
+      },
+      {
+        label: "Emerging technology",
+        value: "Web3 & blockchain",
+        detail: "Experience working with emerging-technology, Web3 and blockchain ventures and initiatives.",
       },
     ],
   },

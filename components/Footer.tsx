@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Native navigation avoids a hosted-router hash interception bug. */
 import { siteContent } from "../content/site";
 
 export function Footer() {
@@ -6,21 +6,21 @@ export function Footer() {
     <footer className="site-footer">
       <div className="shell footer-top">
         <div>
-          <Link className="wordmark footer-wordmark" href="/">Mantle <span>Intelligence</span></Link>
+          <a className="wordmark footer-wordmark" href="/">Mantle <span>Intelligence</span></a>
           <p>{siteContent.footer.line}</p>
         </div>
         <nav aria-label="Footer navigation">
           <div>
             <span>Explore</span>
-            <Link href="/#product">Product</Link>
-            <Link href="/#vision">Vision</Link>
-            <Link href="/#company">Company</Link>
+            <a href="/#product">Product</a>
+            <a href="/#vision">Vision</a>
+            <a href="/#company">Company</a>
           </div>
           <div>
             <span>Company</span>
-            <Link href="/#pilot">Contact</Link>
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
+            <a href="/#pilot">Contact</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
           </div>
         </nav>
       </div>
@@ -31,4 +31,3 @@ export function Footer() {
     </footer>
   );
 }
-

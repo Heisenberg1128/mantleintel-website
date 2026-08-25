@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/", hostname = "localhost") {
@@ -52,4 +53,11 @@ test("www requests redirect to the canonical apex hostname", async () => {
   const response = await render("/privacy?source=www", "www.mantleintel.com");
   assert.equal(response.status, 308);
   assert.equal(response.headers.get("location"), "https://mantleintel.com/privacy?source=www");
+});
+
+test("public navigation uses native links rather than the hosted client router", async () => {
+  for (const path of ["../components/Header.tsx", "../components/Footer.tsx", "../components/LegalPage.tsx", "../app/page.tsx", "../app/not-found.tsx"]) {
+    const source = await readFile(new URL(path, import.meta.url), "utf8");
+    assert.doesNotMatch(source, /next\/link|<Link\b/);
+  }
 });

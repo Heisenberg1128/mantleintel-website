@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Native navigation is intentionally framework-independent. */
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
@@ -10,7 +10,7 @@ export function LegalPage({ title, intro, sections }: { title: string; intro: st
       <Header />
       <main className="legal-main">
         <div className="shell legal-shell">
-          <Link href="/" className="back-link">← Back to home</Link>
+          <a href="/" className="back-link">← Back to home</a>
           <p className="eyebrow">Website notice · Counsel review required</p>
           <h1>{title}</h1>
           <p className="legal-intro">{intro}</p>
@@ -29,4 +29,3 @@ export function LegalPage({ title, intro, sections }: { title: string; intro: st
     </>
   );
 }
-

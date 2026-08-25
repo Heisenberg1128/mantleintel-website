@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Native navigation avoids a hosted-router hash interception bug. */
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { PilotCta } from "../components/PilotCta";
@@ -32,8 +32,8 @@ export default function Home() {
                 <p>{c.hero.body}</p>
               </div>
               <div className="hero-actions">
-                <Link className="button button-dark" href="/#pilot">{c.hero.primaryCta} <span aria-hidden="true">↗</span></Link>
-                <Link className="button button-ghost" href="/#demo">{c.hero.secondaryCta} <span aria-hidden="true">↓</span></Link>
+                <a className="button button-dark" href="/#pilot">{c.hero.primaryCta} <span aria-hidden="true">↗</span></a>
+                <a className="button button-ghost" href="/#demo">{c.hero.secondaryCta} <span aria-hidden="true">↓</span></a>
               </div>
             </div>
             <p className="hero-note">{c.hero.note}</p>
