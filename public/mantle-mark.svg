@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mantle controlled aperture mark">
+  <rect width="64" height="64" rx="8" fill="#171919"/>
+  <path d="M8 10h17l7 10 7-10h17L40 32l16 22H39l-7-10-7 10H8l16-22L8 10Z" fill="#f7f6f2"/>
+  <path d="M28 22h8v20h-8z" fill="#8f9491"/>
+</svg>

@@ -3,7 +3,7 @@ import { siteContent } from "../content/site";
 export function PilotCta() {
   const { pilot } = siteContent;
   return (
-    <section className="pilot-section" id="pilot">
+    <section className="pilot-section">
       <div className="shell pilot-grid">
         <div>
           <p className="eyebrow light">{pilot.eyebrow}</p>
@@ -12,7 +12,10 @@ export function PilotCta() {
         <div>
           <p>{pilot.body}</p>
           {pilot.emailVerified ? (
-            <a className="button button-light" href={`mailto:${pilot.email}`}>Request a pilot <span aria-hidden="true">↗</span></a>
+            <div className="pilot-actions">
+              <a className="button button-light" href="/contact/">Request a pilot <span aria-hidden="true">↗</span></a>
+              <a className="pilot-email" href={`mailto:${pilot.email}`}>{pilot.email}</a>
+            </div>
           ) : (
             <div className="contact-pending" role="note">
               <span>Contact channel</span>
@@ -25,4 +28,3 @@ export function PilotCta() {
     </section>
   );
 }
-

@@ -32,8 +32,9 @@ async function render(pathname, destination) {
 }
 
 await render("/", "index.html");
-await render("/privacy", "privacy/index.html");
-await render("/terms", "terms/index.html");
+for (const route of ["product", "how-it-works", "use-cases", "vision", "company", "contact", "privacy", "terms"]) {
+  await render(`/${route}/`, `${route}/index.html`);
+}
 await render("/robots.txt", "robots.txt");
 await render("/sitemap.xml", "sitemap.xml");
 await render("/page-not-found", "404.html");
@@ -48,7 +49,7 @@ ErrorDocument 404 /404.html
 await writeFile(resolve(output, ".htaccess"), htaccess);
 
 const home = await readFile(resolve(output, "index.html"), "utf8");
-if (!home.includes("Mantle Intelligence") || !home.includes("/#company") || home.includes("<script")) {
+if (!home.includes("Mantle Intelligence") || !home.includes("/company/") || !home.includes("Data governance for AI") || home.includes("<script")) {
   throw new Error("Static export verification failed");
 }
 

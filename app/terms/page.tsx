@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "../../components/LegalPage";
 
-export const metadata: Metadata = { title: "Terms | Mantle Intelligence", alternates: { canonical: "/terms" } };
+export const metadata: Metadata = { title: "Terms | Mantle Intelligence", description: "Preliminary terms for the Mantle Intelligence public website.", alternates: { canonical: "/terms/" } };
 
 export default function TermsPage() {
   return <LegalPage title="Website terms" intro="These preliminary terms cover use of the public Mantle Intelligence website." sections={[
@@ -12,4 +12,3 @@ export default function TermsPage() {
     { title: "Changes", body: ["These terms may change as the company, website and product develop. A final version should be reviewed by qualified counsel before substantive commercial use."] },
   ]} />;
 }
-

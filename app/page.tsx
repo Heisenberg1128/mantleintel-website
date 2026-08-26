@@ -1,5 +1,6 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Native navigation avoids a hosted-router hash interception bug. */
 import { Footer } from "../components/Footer";
+import { CompanyStory } from "../components/CompanyStory";
+import { GovernancePlanes } from "../components/GovernancePlanes";
 import { Header } from "../components/Header";
 import { PilotCta } from "../components/PilotCta";
 import { ProductDemo } from "../components/ProductDemo";
@@ -32,11 +33,22 @@ export default function Home() {
                 <p>{c.hero.body}</p>
               </div>
               <div className="hero-actions">
-                <a className="button button-dark" href="/#pilot">{c.hero.primaryCta} <span aria-hidden="true">↗</span></a>
-                <a className="button button-ghost" href="/#demo">{c.hero.secondaryCta} <span aria-hidden="true">↓</span></a>
+                <a className="button button-dark" href="/contact/">{c.hero.primaryCta} <span aria-hidden="true">↗</span></a>
+                <a className="button button-ghost" href="/product/">{c.hero.secondaryCta} <span aria-hidden="true">→</span></a>
               </div>
             </div>
             <p className="hero-note">{c.hero.note}</p>
+          </div>
+        </section>
+
+        <section className="planes-section section-pad">
+          <div className="shell">
+            <div className="section-heading narrow">
+              <p className="eyebrow">Data governance for AI workflows</p>
+              <h2>Govern data before intelligence is invoked.</h2>
+              <p>Mantle governs how organisational data is selected, classified, transformed, approved, exposed to AI systems, routed, retained and evidenced in the context of AI work.</p>
+            </div>
+            <GovernancePlanes />
           </div>
         </section>
 
@@ -90,7 +102,8 @@ export default function Home() {
               <p className="eyebrow">Product capabilities</p>
               <h2>Control around intelligence.</h2>
             </div>
-            <div className="capability-list">
+            <p className="swipe-cue" aria-hidden="true">Swipe →</p>
+            <div className="capability-list mobile-rail" role="region" aria-label="Product capabilities. Swipe horizontally on smaller screens.">
               {c.capabilities.map((item, index) => (
                 <article key={item.title}>
                   <span className="capability-number">{String(index + 1).padStart(2, "0")}</span>
@@ -108,7 +121,8 @@ export default function Home() {
               <p className="eyebrow">Real work</p>
               <h2>Start with a workflow, not a transformation programme.</h2>
             </div>
-            <div className="use-case-grid">
+            <p className="swipe-cue" aria-hidden="true">Swipe →</p>
+            <div className="use-case-grid mobile-rail" role="region" aria-label="Use cases. Swipe horizontally on smaller screens.">
               {c.useCases.map((item, index) => (
                 <article key={item.title}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
@@ -161,22 +175,11 @@ export default function Home() {
         <section className="founders-section section-pad" id="company">
           <div className="shell founders-grid">
             <div className="section-heading">
-              <p className="eyebrow">Company</p>
-              <h2>Built with an operator’s view of governed work.</h2>
+              <p className="eyebrow">{c.foundingTeam.eyebrow}</p>
+              <h2>{c.foundingTeam.headline}</h2>
               <p>{c.foundingTeam.body}</p>
             </div>
-            <div className="founder-list" aria-label="Founding team background">
-              <div className="founding-intro">
-                <p className="eyebrow">{c.foundingTeam.eyebrow}</p>
-                <h3>{c.foundingTeam.headline}</h3>
-              </div>
-              {c.foundingTeam.background.map((item, index) => (
-                <article key={item.label}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div><small>{item.label}</small><h3>{item.value}</h3><p>{item.detail}</p></div>
-                </article>
-              ))}
-            </div>
+            <CompanyStory />
           </div>
         </section>
 

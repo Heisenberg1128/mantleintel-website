@@ -11,34 +11,38 @@ async function render(path = "/", hostname = "localhost") {
   }, { waitUntil() {}, passThroughOnException() {} });
 }
 
-test("homepage renders the complete Mantle narrative", async () => {
+test("homepage renders the revised Mantle narrative and clean navigation", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Mantle Intelligence \| Control for Enterprise AI/);
+  assert.match(html, /Mantle Intelligence \| Enterprise AI &amp; Data Governance/);
   assert.match(html, /Let people and AI agents work/);
-  assert.match(html, /Keep authority under control/);
-  assert.match(html, /See what leaves Mantle/);
-  assert.match(html, /AI understands\. Policy authorises\./);
-  assert.match(html, /Agent Workrooms are a product direction under development/);
-  assert.match(html, /mantle-brand-plate\.png/);
-  assert.match(html, /20\+ years/);
-  assert.match(html, /HKU MBA/);
-  for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "pilot"]) {
-    assert.match(html, new RegExp(`href="/\\#${target}"`));
+  assert.match(html, /Data governance for AI/);
+  assert.match(html, /Institutional experience\. Operator execution\. Built in Hong Kong\./);
+  assert.match(html, /J\.P\. Morgan/);
+  assert.match(html, /contact@aqtif\.com/);
+  for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "contact"]) {
+    assert.match(html, new RegExp(`href="/${target}/"`));
   }
+  assert.doesNotMatch(html, /href="\/#/);
   assert.match(html, /href="https:\/\/mantlecorps\.com"/);
-  assert.doesNotMatch(html, /Alfred Lee|>Harry</);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|trusted by leading|lorem ipsum/i);
 });
 
-test("legal routes are transparent placeholders", async () => {
-  for (const path of ["/privacy", "/terms"]) {
+test("all corporate routes render directly", async () => {
+  const routes = ["/product/", "/how-it-works/", "/use-cases/", "/vision/", "/company/", "/contact/", "/privacy/", "/terms/"];
+  for (const path of routes) {
     const response = await render(path);
-    assert.equal(response.status, 200);
+    assert.equal(response.status, 200, path);
     const html = await response.text();
-    assert.match(html, /Counsel review required/);
-    assert.doesNotMatch(html, /SOC 2 compliant|ISO 27001 compliant|Fully GDPR compliant/i);
+    assert.match(html, /Mantle Intelligence/);
+  }
+});
+
+test("claim discipline remains explicit", async () => {
+  for (const path of ["/", "/product/", "/vision/"]) {
+    const html = await (await render(path)).text();
+    assert.doesNotMatch(html, /SOC 2 compliant|ISO 27001 compliant|Fully GDPR compliant|trusted by|clients include/i);
   }
 });
 
@@ -50,9 +54,9 @@ test("SEO routes render", async () => {
 });
 
 test("www requests redirect to the canonical apex hostname", async () => {
-  const response = await render("/privacy?source=www", "www.mantleintel.com");
+  const response = await render("/product/?source=www", "www.mantleintel.com");
   assert.equal(response.status, 308);
-  assert.equal(response.headers.get("location"), "https://mantleintel.com/privacy?source=www");
+  assert.equal(response.headers.get("location"), "https://mantleintel.com/product/?source=www");
 });
 
 test("public navigation uses native links rather than the hosted client router", async () => {
