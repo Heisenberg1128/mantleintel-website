@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://mantleintel.com
+Sitemap: https://mantleintel.com/sitemap.xml

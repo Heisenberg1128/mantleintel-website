@@ -1,0 +1,6 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.mantleintel\.com$ [NC]
+RewriteRule ^(.*)$ https://mantleintel.com/$1 [R=301,L]
+
+ErrorDocument 404 /404.html
