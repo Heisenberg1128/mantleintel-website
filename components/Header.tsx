@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element -- Native navigation and a static vector mark suit the static export. */
+/* eslint-disable @next/next/no-html-link-for-pages -- Native links keep the static export portable. */
+import { BrandMark } from "./BrandMark";
 import { siteContent } from "../content/site";
 
 export function Header() {
@@ -6,7 +7,7 @@ export function Header() {
     <header className="site-header">
       <div className="shell header-inner">
         <a className="wordmark" href="/" aria-label="Mantle Intelligence home">
-          <img src="/mantle-mark.svg" alt="" width={25} height={25} aria-hidden="true" />
+          <BrandMark />
           <b>Mantle</b> <span>Intelligence</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">

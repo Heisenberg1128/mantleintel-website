@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element -- Native navigation and a static vector mark suit the static export. */
+/* eslint-disable @next/next/no-html-link-for-pages -- Native links keep the static export portable. */
+import { BrandMark } from "./BrandMark";
 import { siteContent } from "../content/site";
 
 export function Footer() {
@@ -6,7 +7,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="shell footer-top">
         <div>
-          <a className="wordmark footer-wordmark" href="/"><img src="/mantle-mark.svg" alt="" width={25} height={25} aria-hidden="true" /><b>Mantle</b> <span>Intelligence</span></a>
+          <a className="wordmark footer-wordmark" href="/"><BrandMark /><b>Mantle</b> <span>Intelligence</span></a>
           <p>{siteContent.footer.line}</p>
         </div>
         <nav aria-label="Footer navigation">
