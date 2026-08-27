@@ -252,7 +252,7 @@ h3 { font-size: 22px; line-height: 1.18; }
 .pilot-grid h2 { font-size: clamp(48px, 5vw, 78px); }
 .pilot-grid > div:last-child > p { margin: 6px 0 48px; color: #b7bcba; font-size: 20px; }
 .pilot-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
-.pilot-email { color: #c5c9c7; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.pilot-privacy { max-width: 220px; color: #9ea3a1; font-size: 12px; }
 .contact-pending { max-width: 520px; padding: 24px; border: 1px solid #626664; }
 .contact-pending span, .contact-pending small { display: block; color: #9ea3a1; }
 .contact-pending span { margin-bottom: 14px; font-family: var(--font-geist-mono), monospace; font-size: 10px; text-transform: uppercase; }
@@ -280,6 +280,32 @@ h3 { font-size: 22px; line-height: 1.18; }
 .governance-planes article > p { margin: 76px 0 14px; font-family: var(--font-geist-mono), monospace; font-size: 12px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
 .governance-planes h3 { margin-bottom: 16px; font-size: clamp(27px, 2.7vw, 39px); }
 .governance-planes small { color: var(--ink-soft); font-size: 15px; }
+
+.why-now {
+  display: grid;
+  grid-template-columns: .58fr 1.42fr;
+  gap: 80px;
+  margin-top: 68px;
+  padding: 34px 0 4px;
+  border-top: 1px solid var(--ink);
+}
+.why-now h2 { max-width: 760px; font-size: clamp(30px, 3.3vw, 50px); line-height: 1.08; }
+.why-now > div > p { max-width: 760px; margin: 24px 0 0; color: var(--ink-soft); font-size: 19px; }
+
+.boundary-statement { padding: 0 0 116px; background: var(--paper-bright); }
+.boundary-statement .shell {
+  display: grid;
+  grid-template-columns: 190px 1fr auto;
+  gap: 48px;
+  align-items: center;
+  padding: 42px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.boundary-statement .shell > span { color: #747876; font-family: var(--font-geist-mono), monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.boundary-statement strong { font-size: clamp(31px, 4vw, 58px); font-weight: 500; letter-spacing: -.05em; line-height: 1.06; }
+.boundary-statement a { white-space: nowrap; font-size: 14px; font-weight: 650; }
+.boundary-statement a span { margin-left: 18px; }
 
 .route-main { min-height: 70vh; }
 .route-hero { padding: 96px 0 104px; border-bottom: 1px solid var(--line); }
@@ -312,10 +338,13 @@ h3 { font-size: 22px; line-height: 1.18; }
 .pilot-form input, .pilot-form textarea { width: 100%; padding: 14px 15px; border: 1px solid #adafab; border-radius: 0; background: #fff; color: var(--ink); }
 .pilot-form input:focus, .pilot-form textarea:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
 .form-wide { grid-column: 1 / -1; }
+.form-trap { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; }
 .contact-grid aside { padding-left: 42px; border-left: 1px solid var(--line); }
 .contact-grid aside h2 { margin-bottom: 28px; font-size: clamp(38px, 4vw, 60px); }
 .contact-grid aside > p:last-child { margin-top: 28px; color: var(--ink-soft); }
-.contact-address { display: block; overflow-wrap: anywhere; font-size: clamp(20px, 2.4vw, 32px); text-decoration: underline; text-underline-offset: 6px; }
+.contact-promise > p:not(.eyebrow) { color: var(--ink-soft); font-size: 18px; }
+.contact-promise ul { margin: 36px 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.contact-promise li { padding: 18px 0; border-bottom: 1px solid var(--line); color: #555957; }
 
 .legal-main { padding: 100px 0 140px; }
 .legal-shell { max-width: 900px; }
@@ -351,7 +380,7 @@ h3 { font-size: 22px; line-height: 1.18; }
   .mobile-nav nav a { padding: 10px; }
   .hero { padding-top: 14px; }
   .hero-copy { width: calc(100% - 28px); }
-  .hero-support, .split-heading, .philosophy-grid, .future-grid, .mission-grid, .founders-grid, .pilot-grid, .route-hero-grid, .company-route-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-support, .split-heading, .philosophy-grid, .future-grid, .mission-grid, .founders-grid, .pilot-grid, .route-hero-grid, .company-route-grid, .contact-grid, .why-now { grid-template-columns: 1fr; }
   .hero-support { gap: 36px; margin: 42px 0; padding-left: 0; }
   .brand-plate { aspect-ratio: 3 / 2; }
   .control-diagram { grid-template-columns: 1fr; padding: 30px; }
@@ -380,6 +409,9 @@ h3 { font-size: 22px; line-height: 1.18; }
   .governance-planes article { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--ink); }
   .governance-planes article:last-child { border-bottom: 0; }
   .governance-planes article > p { margin-top: 48px; }
+  .why-now { gap: 16px; margin-top: 54px; }
+  .boundary-statement { padding-bottom: 88px; }
+  .boundary-statement .shell { grid-template-columns: 1fr; gap: 22px; }
   .route-hero { padding: 68px 0 74px; }
   .route-hero-grid { gap: 28px; }
   .route-section { padding: 88px 0; }

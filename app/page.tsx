@@ -8,6 +8,12 @@ import { siteContent } from "../content/site";
 
 export default function Home() {
   const c = siteContent;
+  const homepageCapabilities = [
+    c.capabilities[0],
+    c.capabilities[2],
+    c.capabilities[3],
+    c.capabilities[6],
+  ];
   return (
     <>
       <Header />
@@ -49,17 +55,13 @@ export default function Home() {
               <p>Mantle governs how organisational data is selected, classified, transformed, approved, exposed to AI systems, routed, retained and evidenced in the context of AI work.</p>
             </div>
             <GovernancePlanes />
-          </div>
-        </section>
-
-        <section className="problem section-pad">
-          <div className="shell split-heading">
-            <p className="eyebrow">{c.problem.eyebrow}</p>
-            <div>
-              <h2>{c.problem.headline}</h2>
-              <p>{c.problem.body}</p>
-              <strong className="editorial-statement">{c.problem.statement}</strong>
-            </div>
+            <aside className="why-now" aria-labelledby="why-now-title">
+              <p className="eyebrow">Why now?</p>
+              <div>
+                <h2 id="why-now-title">AI adoption is moving faster than enterprise control.</h2>
+                <p>Employees already use multiple AI models. Agents are beginning to access systems and act on behalf of users. Governance has to move from model-level security to control over data, authority and action.</p>
+              </div>
+            </aside>
           </div>
         </section>
 
@@ -71,28 +73,15 @@ export default function Home() {
               <p>{c.demo.body}</p>
             </div>
             <div className="demo-frame"><ProductDemo video={c.demo.video} /></div>
-            <p className="demo-note"><span aria-hidden="true">→</span> {c.demo.note}</p>
+            <p className="demo-note"><span aria-hidden="true">→</span> Product film placeholder · the finished demonstration will sit here.</p>
           </div>
         </section>
 
-        <section className="workflow-section section-pad" id="how-it-works">
+        <section className="boundary-statement" aria-label="Mantle data boundary">
           <div className="shell">
-            <div className="section-heading">
-              <p className="eyebrow">Employee AI Workspace · Current product</p>
-              <h2>Useful work, through a governed boundary.</h2>
-            </div>
-            <ol className="workflow-list">
-              {c.workflow.map((item, index) => (
-                <li key={item.title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                </li>
-              ))}
-            </ol>
-            <div className="control-language" aria-label="Mantle treatment language">
-              {c.controls.map((control, index) => <span key={control}><i>{String(index + 1).padStart(2, "0")}</i>{control}</span>)}
-            </div>
+            <span>01 · Governed boundary</span>
+            <strong>{c.demo.note}</strong>
+            <a href="/how-it-works/">See how it works <span aria-hidden="true">→</span></a>
           </div>
         </section>
 
@@ -100,11 +89,11 @@ export default function Home() {
           <div className="shell">
             <div className="section-heading">
               <p className="eyebrow">Product capabilities</p>
-              <h2>Control around intelligence.</h2>
+              <h2>Four controls that make AI usable.</h2>
             </div>
             <p className="swipe-cue" aria-hidden="true">Swipe →</p>
             <div className="capability-list mobile-rail" role="region" aria-label="Product capabilities. Swipe horizontally on smaller screens.">
-              {c.capabilities.map((item, index) => (
+              {homepageCapabilities.map((item, index) => (
                 <article key={item.title}>
                   <span className="capability-number">{String(index + 1).padStart(2, "0")}</span>
                   <div><h3>{item.title}</h3><p>{item.body}</p></div>
@@ -134,19 +123,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="philosophy section-pad">
-          <div className="shell philosophy-grid">
-            <div>
-              <p className="eyebrow light">{c.philosophy.eyebrow}</p>
-              <h2>{c.philosophy.headline}</h2>
-            </div>
-            <div>
-              <p>{c.philosophy.body}</p>
-              <blockquote>{c.philosophy.principle}</blockquote>
-            </div>
-          </div>
-        </section>
-
         <section className="future-section section-pad" id="vision">
           <div className="shell future-grid">
             <div className="section-heading">
@@ -162,14 +138,6 @@ export default function Home() {
           <div className="shell authority-sequence" aria-label="Future governed agent authority model">
             <span>See</span><i>→</i><span>Propose</span><i>→</i><span>Approve</span><i>→</i><span>Act</span><i>→</i><span>Evidence</span>
           </div>
-        </section>
-
-        <section className="mission-section section-pad">
-          <div className="shell mission-grid">
-            <article><p className="eyebrow">Mission</p><h2>{c.mission}</h2></article>
-            <article><p className="eyebrow">Vision</p><h2>{c.vision}</h2></article>
-          </div>
-          <div className="shell abundance-line">Intelligence will become abundant. <span>Trust and authority will not.</span></div>
         </section>
 
         <section className="founders-section section-pad" id="company">

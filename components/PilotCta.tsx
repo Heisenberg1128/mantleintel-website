@@ -11,18 +11,10 @@ export function PilotCta() {
         </div>
         <div>
           <p>{pilot.body}</p>
-          {pilot.emailVerified ? (
-            <div className="pilot-actions">
-              <a className="button button-light" href="/contact/">Request a pilot <span aria-hidden="true">↗</span></a>
-              <a className="pilot-email" href={`mailto:${pilot.email}`}>{pilot.email}</a>
-            </div>
-          ) : (
-            <div className="contact-pending" role="note">
-              <span>Contact channel</span>
-              <strong>Business mailbox being configured</strong>
-              <small>The pilot enquiry address will be activated here.</small>
-            </div>
-          )}
+          <div className="pilot-actions">
+            <a className="button button-light" href="/contact/">Request a pilot <span aria-hidden="true">↗</span></a>
+            <small className="pilot-privacy">Send your enquiry securely through the site.</small>
+          </div>
         </div>
       </div>
     </section>

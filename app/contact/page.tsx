@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { MarketingPage } from "../../components/MarketingPage";
-import { siteContent } from "../../content/site";
 
 export const metadata: Metadata = {
   title: "Request a Pilot | Mantle Intelligence",
@@ -10,10 +9,31 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const pilot = siteContent.pilot;
   return (
     <MarketingPage eyebrow="Request a pilot" title="Bring one real AI workflow." intro="Start with one team and one real policy boundary. Tell us where useful AI work meets data, model or approval constraints.">
-      <section className="route-section route-paper"><div className="shell contact-grid"><form className="pilot-form" action={`mailto:${pilot.email}`} method="post" encType="text/plain"><label>Name<input name="name" autoComplete="name" required /></label><label>Organisation<input name="organisation" autoComplete="organization" required /></label><label>Work email<input name="email" type="email" autoComplete="email" required /></label><label>Role<input name="role" autoComplete="organization-title" /></label><label className="form-wide">What AI workflow are you exploring?<textarea name="workflow" rows={6} required /></label><button className="button button-dark form-wide" type="submit">Send pilot request <span aria-hidden="true">↗</span></button></form><aside><p className="eyebrow">Direct contact</p><h2>Prefer email?</h2><a className="contact-address" href={`mailto:${pilot.email}`}>{pilot.email}</a><p>We’ll use your note only to discuss a Mantle pilot or design-partner conversation.</p></aside></div></section>
+      <section className="route-section route-paper">
+        <div className="shell contact-grid">
+          <form className="pilot-form" action="/contact-submit.php" method="post">
+            <label>Name<input name="name" autoComplete="name" required maxLength={120} /></label>
+            <label>Organisation<input name="organisation" autoComplete="organization" required maxLength={160} /></label>
+            <label>Work email<input name="email" type="email" autoComplete="email" required maxLength={200} /></label>
+            <label>Role<input name="role" autoComplete="organization-title" maxLength={160} /></label>
+            <label className="form-wide">What AI workflow are you exploring?<textarea name="workflow" rows={6} required maxLength={5000} /></label>
+            <label className="form-trap" aria-hidden="true">Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label>
+            <button className="button button-dark form-wide" type="submit">Send pilot request <span aria-hidden="true">↗</span></button>
+          </form>
+          <aside className="contact-promise">
+            <p className="eyebrow">Private enquiry</p>
+            <h2>Send it from here.</h2>
+            <p>Your note is delivered directly to the Mantle founding team. No external email application is required, and no personal mailbox is displayed on this site.</p>
+            <ul>
+              <li>One workflow is enough to start.</li>
+              <li>We will only use your details to discuss a pilot or design-partner conversation.</li>
+              <li>Submitting this form does not create a customer relationship.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
     </MarketingPage>
   );
 }

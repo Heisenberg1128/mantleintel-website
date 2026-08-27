@@ -115,8 +115,6 @@ export const siteContent = {
     headline: "Bring one real AI workflow.",
     body:
       "Start with one workflow, one team and one real policy boundary. We’ll explore where AI can create useful productivity without sacrificing control.",
-    email: "contact@aqtif.com",
-    emailVerified: true,
   },
   footer: {
     line: "Control for the AI-enabled organisation.",

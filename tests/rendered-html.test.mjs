@@ -20,13 +20,25 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.match(html, /Data governance for AI/);
   assert.match(html, /Institutional experience\. Operator execution\. Built in Hong Kong\./);
   assert.match(html, /J\.P\. Morgan/);
-  assert.match(html, /contact@aqtif\.com/);
+  assert.match(html, /AI adoption is moving faster than enterprise control/);
+  assert.match(html, /Only the approved context leaves Mantle/);
+  assert.doesNotMatch(html, /@aqtif\.com/);
   for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "contact"]) {
     assert.match(html, new RegExp(`href="/${target}/"`));
   }
   assert.doesNotMatch(html, /href="\/#/);
   assert.match(html, /href="https:\/\/mantlecorps\.com"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|trusted by leading|lorem ipsum/i);
+});
+
+test("pilot enquiries submit privately to both configured recipients", async () => {
+  const contactHtml = await (await render("/contact/")).text();
+  assert.match(contactHtml, /action="\/contact-submit\.php"/);
+  assert.doesNotMatch(contactHtml, /mailto:|@aqtif\.com/);
+
+  const handler = await readFile(new URL("../public/contact-submit.php", import.meta.url), "utf8");
+  assert.match(handler, /contact@aqtif\.com/);
+  assert.match(handler, /alfred@aqtif\.com/);
 });
 
 test("all corporate routes render directly", async () => {

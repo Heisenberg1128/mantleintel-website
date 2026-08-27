@@ -8,6 +8,6 @@ export default function PrivacyPage() {
     { title: "Website information", body: ["The website may receive ordinary technical request information needed to deliver pages, such as IP address, browser type and request time, through its hosting provider.", "No invasive analytics or advertising trackers are enabled by default in this initial release."] },
     { title: "Pilot enquiries", body: ["If you contact Mantle about a pilot, the information you choose to provide may be used to understand and respond to your enquiry. Do not submit confidential, regulated or sensitive operational data through an initial website enquiry."] },
     { title: "Third-party services", body: ["The website is delivered through third-party hosting and domain services. A future embedded product video or enquiry service may introduce additional providers; this notice should be updated before those services are enabled."] },
-    { title: "Questions", body: ["Privacy and website questions can be sent to contact@aqtif.com. This notice remains subject to qualified legal review as Mantle develops."] },
+    { title: "Questions", body: ["Privacy and website questions can be submitted through the contact form. This notice remains subject to qualified legal review as Mantle develops."] },
   ]} />;
 }
