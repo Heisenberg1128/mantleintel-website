@@ -1,5 +1,5 @@
 import { Footer } from "../components/Footer";
-import { CompanyStory } from "../components/CompanyStory";
+import { ExperienceLogos } from "../components/ExperienceLogos";
 import { GovernancePlanes } from "../components/GovernancePlanes";
 import { Header } from "../components/Header";
 import { PilotCta } from "../components/PilotCta";
@@ -46,6 +46,8 @@ export default function Home() {
             <p className="hero-note">{c.hero.note}</p>
           </div>
         </section>
+
+        <ExperienceLogos className="homepage-experience" />
 
         <section className="planes-section section-pad">
           <div className="shell">
@@ -141,13 +143,20 @@ export default function Home() {
         </section>
 
         <section className="founders-section section-pad" id="company">
-          <div className="shell founders-grid">
+          <div className="shell founders-editorial">
             <div className="section-heading">
               <p className="eyebrow">{c.foundingTeam.eyebrow}</p>
               <h2>{c.foundingTeam.headline}</h2>
               <p>{c.foundingTeam.body}</p>
             </div>
-            <CompanyStory />
+            <div className="founding-pillars" aria-label="Founding team experience">
+              {c.foundingTeam.pillars.map((item, index) => (
+                <article key={item.label}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div><h3>{item.label}</h3><p>{item.detail}</p></div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

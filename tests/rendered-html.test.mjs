@@ -18,8 +18,11 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.match(html, /Mantle Intelligence \| Enterprise AI &amp; Data Governance/);
   assert.match(html, /Let people and AI agents work/);
   assert.match(html, /Data governance for AI/);
-  assert.match(html, /Institutional experience\. Operator execution\. Built in Hong Kong\./);
-  assert.match(html, /J\.P\. Morgan/);
+  assert.match(html, /Institutional judgement\. Operator execution\. Built in Hong Kong\./);
+  assert.match(html, /The founding team brings experience from/);
+  assert.match(html, /alt="J\.P\. Morgan"/);
+  assert.match(html, /alt="HKU Business School"/);
+  assert.doesNotMatch(html, /Two HKU MBA alumni|Selected professional backgrounds/);
   assert.match(html, /AI adoption is moving faster than enterprise control/);
   assert.match(html, /Only the approved context leaves Mantle/);
   assert.doesNotMatch(html, /@aqtif\.com/);

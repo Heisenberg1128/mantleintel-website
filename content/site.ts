@@ -97,17 +97,25 @@ export const siteContent = {
     "A world where people and AI agents can work across organisational systems while authority, context and accountability remain governed.",
   foundingTeam: {
     eyebrow: "Company",
-    headline: "Institutional experience. Operator execution. Built in Hong Kong.",
+    headline: "Institutional judgement. Operator execution. Built in Hong Kong.",
     body:
-      "Mantle Intelligence is being built in Hong Kong by two HKU MBA alumni whose backgrounds span global investment banking, regulated finance, operations and emerging technology.",
-    experienceLabel: "Selected professional backgrounds",
-    experience: ["J.P. Morgan", "Deutsche Bank", "Standard Chartered", "Sinopec Hong Kong", "BitMart", "OliveX / Animoca ecosystem"],
-    disclaimer: "Selected organisations represented in the founders’ professional backgrounds. No affiliation or endorsement implied.",
-    background: [
-      { label: "Global finance", value: "Institutional finance", detail: "Experience shaped by global investment banking, regulated financial services and institutional decision-making." },
-      { label: "Operators", value: "Built inside operating businesses", detail: "Experience from Sinopec Hong Kong, digital-asset businesses and technology operations—not only advisory environments." },
-      { label: "HKU", value: "Two HKU MBA alumni", detail: "Finance discipline meets hands-on operator execution." },
-      { label: "Hong Kong", value: "Where finance, data and regulation meet", detail: "A strategic starting point for governed AI workflows designed for organisations operating across jurisdictions." },
+      "Mantle Intelligence is being built in Hong Kong by a founding team of HKU MBA alumni, bringing experience across global investment banking, regulated finance, corporate operations, blockchain, Web3 and emerging technology.",
+    experienceLabel: "The founding team brings experience from",
+    experienceLogos: [
+      { key: "jpmorgan", name: "J.P. Morgan", src: "/experience/jpmorgan.png" },
+      { key: "sinopec", name: "Sinopec", src: "/experience/sinopec.png" },
+      { key: "deutsche", name: "Deutsche Bank", src: "/experience/deutsche-bank.png" },
+      { key: "animoca", name: "Animoca Brands", src: "/experience/animoca-brands.png" },
+      { key: "hku", name: "HKU Business School", src: "/experience/hku-business-school.png" },
+      { key: "hashkey", name: "HashKey Group", src: "/experience/hashkey-group.png" },
+      { key: "olivex", name: "OliveX", src: "/experience/olivex.png" },
+      { key: "standard-chartered", name: "Standard Chartered", src: "/experience/standard-chartered.png" },
+    ],
+    disclaimer: "Organisations represented in the founding team’s professional and academic backgrounds. No affiliation or endorsement implied.",
+    pillars: [
+      { label: "Institutional finance", detail: "Global investment banking, regulated financial services and institutional decision-making." },
+      { label: "Operating experience", detail: "Hands-on work inside corporate, technology and digital-asset businesses." },
+      { label: "Emerging technology", detail: "Blockchain, Web3 and product execution across fast-moving technology ecosystems." },
     ],
   },
   pilot: {
