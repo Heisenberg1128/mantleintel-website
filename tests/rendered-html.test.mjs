@@ -54,6 +54,30 @@ test("all corporate routes render directly", async () => {
   }
 });
 
+test("all public routes are available in Traditional and Simplified Chinese", async () => {
+  const routes = ["", "product/", "how-it-works/", "use-cases/", "vision/", "company/", "contact/", "privacy/", "terms/"];
+  for (const locale of ["zh-hk", "zh-cn"]) {
+    for (const route of routes) {
+      const path = `/${locale}/${route}`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      const html = await response.text();
+      assert.match(html, new RegExp(`href="/${locale}/"`));
+      assert.match(html, new RegExp(`href="/${locale}/product/"`));
+      assert.match(html, /Mantle Intelligence/);
+    }
+  }
+});
+
+test("language selector preserves the current public route", async () => {
+  const html = await (await render("/zh-hk/company/")).text();
+  assert.match(html, /href="\/company\/"[^>]*hrefLang="en"/);
+  assert.match(html, /href="\/zh-hk\/company\/"[^>]*hrefLang="zh-Hant"/);
+  assert.match(html, /href="\/zh-cn\/company\/"[^>]*hrefLang="zh-Hans"/);
+  assert.match(html, /創辦團隊曾任職及就讀於/);
+  assert.doesNotMatch(html, /Founding perspective|Built for serious organisations/);
+});
+
 test("claim discipline remains explicit", async () => {
   for (const path of ["/", "/product/", "/vision/"]) {
     const html = await (await render(path)).text();

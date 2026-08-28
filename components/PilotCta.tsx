@@ -1,7 +1,8 @@
-import { siteContent } from "../content/site";
+import { contentByLocale, interfaceCopy, localizedPath, type Locale } from "../content/i18n";
 
-export function PilotCta() {
-  const { pilot } = siteContent;
+export function PilotCta({ locale = "en" }: { locale?: Locale }) {
+  const { pilot } = contentByLocale[locale];
+  const ui = interfaceCopy[locale];
   return (
     <section className="pilot-section">
       <div className="shell pilot-grid">
@@ -12,8 +13,8 @@ export function PilotCta() {
         <div>
           <p>{pilot.body}</p>
           <div className="pilot-actions">
-            <a className="button button-light" href="/contact/">Request a pilot <span aria-hidden="true">↗</span></a>
-            <small className="pilot-privacy">Send your enquiry securely through the site.</small>
+            <a className="button button-light" href={localizedPath(locale, "contact")}>{ui.requestPilot} <span aria-hidden="true">↗</span></a>
+            <small className="pilot-privacy">{ui.secureEnquiry}</small>
           </div>
         </div>
       </div>

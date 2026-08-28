@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/product/", "/how-it-works/", "/use-cases/", "/vision/", "/company/", "/contact/", "/privacy/", "/terms/"];
-  return routes.map((path) => ({
-    url: `https://mantleintel.com${path}`,
-    lastModified: new Date(),
-    changeFrequency: path ? "monthly" : "weekly",
-    priority: path ? 0.7 : 1,
-  }));
+  return ["", "/zh-hk", "/zh-cn"].flatMap((prefix) => routes.map((path) => ({
+      url: `https://mantleintel.com${prefix}${path || "/"}`,
+      lastModified: new Date(),
+      changeFrequency: path ? "monthly" as const : "weekly" as const,
+      priority: path ? 0.7 : 1,
+    })));
 }

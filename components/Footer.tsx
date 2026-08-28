@@ -1,33 +1,34 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Native links keep the static export portable. */
 import { BrandMark } from "./BrandMark";
-import { siteContent } from "../content/site";
+import { contentByLocale, interfaceCopy, localizedPath, type Locale } from "../content/i18n";
 
-export function Footer() {
+export function Footer({ locale = "en" }: { locale?: Locale }) {
+  const content = contentByLocale[locale];
+  const ui = interfaceCopy[locale];
   return (
     <footer className="site-footer">
       <div className="shell footer-top">
         <div>
-          <a className="wordmark footer-wordmark" href="/"><BrandMark /><b>Mantle</b> <span>Intelligence</span></a>
-          <p>{siteContent.footer.line}</p>
+          <a className="wordmark footer-wordmark" href={localizedPath(locale)}><BrandMark /><b>Mantle</b> <span>Intelligence</span></a>
+          <p>{content.footer.line}</p>
         </div>
         <nav aria-label="Footer navigation">
           <div>
-            <span>Explore</span>
-            <a href="/product/">Product</a>
-            <a href="/vision/">Vision</a>
-            <a href="/company/">Company</a>
+            <span>{ui.explore}</span>
+            <a href={localizedPath(locale, "product")}>{content.navigation[0].label}</a>
+            <a href={localizedPath(locale, "vision")}>{content.navigation[3].label}</a>
+            <a href={localizedPath(locale, "company")}>{content.navigation[4].label}</a>
           </div>
           <div>
-            <span>Company</span>
-            <a href="/contact/">Contact</a>
-            <a href="/privacy/">Privacy</a>
-            <a href="/terms/">Terms</a>
+            <span>{ui.company}</span>
+            <a href={localizedPath(locale, "contact")}>{ui.contact}</a>
+            <a href={localizedPath(locale, "privacy")}>{ui.privacy}</a>
+            <a href={localizedPath(locale, "terms")}>{ui.terms}</a>
           </div>
         </nav>
       </div>
       <div className="shell footer-bottom">
-        <p>© 2026 Mantle Intelligence. All rights reserved.</p>
-        <p>{siteContent.footer.origin}</p>
+        <p>{ui.copyright}</p>
+        <p>{content.footer.origin}</p>
       </div>
     </footer>
   );

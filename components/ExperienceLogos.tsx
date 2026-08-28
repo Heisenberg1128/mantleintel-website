@@ -1,7 +1,7 @@
-import { siteContent } from "../content/site";
+import { contentByLocale, type Locale } from "../content/i18n";
 
-export function ExperienceLogos({ className = "" }: { className?: string }) {
-  const team = siteContent.foundingTeam;
+export function ExperienceLogos({ className = "", locale = "en" }: { className?: string; locale?: Locale }) {
+  const team = contentByLocale[locale].foundingTeam;
 
   return (
     <section className={`experience-band ${className}`.trim()} aria-label={team.experienceLabel}>
