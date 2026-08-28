@@ -34,10 +34,8 @@ export default function Home() {
               />
             </figure>
             <div className="hero-support">
-              <div>
-                <p className="eyebrow">{c.hero.eyebrow}</p>
-                <p>{c.hero.body}</p>
-              </div>
+              <p className="eyebrow hero-support-label">{c.hero.eyebrow}</p>
+              <p className="hero-support-body">{c.hero.body}</p>
               <div className="hero-actions">
                 <a className="button button-dark" href="/contact/">{c.hero.primaryCta} <span aria-hidden="true">↗</span></a>
                 <a className="button button-ghost" href="/product/">{c.hero.secondaryCta} <span aria-hidden="true">→</span></a>
