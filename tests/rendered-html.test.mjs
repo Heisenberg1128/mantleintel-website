@@ -25,8 +25,8 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.doesNotMatch(html, /Two HKU MBA alumni|Selected professional backgrounds/);
   assert.match(html, /AI adoption is moving faster than enterprise control/);
   assert.match(html, /Only the approved context leaves Mantle/);
-  assert.match(html, /<iframe[^>]*class="demo-media"/);
-  assert.match(html, /youtube-nocookie\.com\/embed\/2OyAKT60mw4/);
+  assert.match(html, /<video[^>]*controls[^>]*aria-label="Mantle Product Demo"/);
+  assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
   assert.match(html, /Click Play to watch with sound/);
   assert.doesNotMatch(html, /@aqtif\.com/);
   for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "contact"]) {
@@ -40,9 +40,9 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
 test("the embedded product film is available across all three languages", async () => {
   for (const path of ["/", "/zh-hk/", "/zh-cn/"]) {
     const html = await (await render(path)).text();
-    assert.match(html, /<iframe[^>]*class="demo-media"/);
-    assert.match(html, /youtube-nocookie\.com\/embed\/2OyAKT60mw4/);
-    assert.match(html, /allowFullScreen/);
+    assert.match(html, /<video[^>]*controls/);
+    assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
+    assert.doesNotMatch(html, /youtube(?:-nocookie)?\.com/);
     assert.doesNotMatch(html, /Product film placeholder|產品影片預留位置|产品视频预留位置/);
   }
 });

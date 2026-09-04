@@ -36,7 +36,7 @@ export const pageCopy = {
     privacy: { title: "Privacy notice", intro: "This notice describes the limited information this public website may handle at its current stage.", sections: [
       { title: "Website information", body: ["The website may receive ordinary technical request information needed to deliver pages, such as IP address, browser type and request time, through its hosting provider.", "No invasive analytics or advertising trackers are enabled by default in this initial release."] },
       { title: "Pilot enquiries", body: ["If you contact Mantle about a pilot, the information you choose to provide may be used to understand and respond to your enquiry. Do not submit confidential, regulated or sensitive operational data through an initial website enquiry."] },
-      { title: "Third-party services", body: ["The website is delivered through third-party hosting and domain services. The product demonstration is embedded from YouTube using its privacy-enhanced player; YouTube may receive technical request information when the player loads or is used."] },
+      { title: "Third-party services", body: ["The website, including its product demonstration video, is delivered through third-party hosting and domain services. The video is served directly from Mantle’s website and is not embedded from a public video-sharing channel."] },
       { title: "Questions", body: ["Privacy and website questions can be submitted through the contact form. This notice remains subject to qualified legal review as Mantle develops."] },
     ] },
     terms: { title: "Website terms", intro: "These preliminary terms cover use of the public Mantle Intelligence website.", sections: [
@@ -82,7 +82,7 @@ export const pageCopy = {
     privacy: { title: "私隱政策", intro: "本聲明說明這個公開網站在現階段可能處理的有限資料。", sections: [
       { title: "網站技術資料", body: ["網站託管服務供應商可能會接收提供頁面所需的一般技術資料，例如 IP 地址、瀏覽器類型及請求時間。", "網站初期版本預設不啟用侵入式分析或廣告追蹤器。"] },
       { title: "試點查詢", body: ["如果您聯絡 Mantle 查詢試點，我們可能會使用您主動提供的資料來理解及回覆查詢。首次網站查詢請勿提交機密、受監管或敏感營運資料。"] },
-      { title: "第三方服務", body: ["網站使用第三方託管及網域服務。產品示範影片透過 YouTube 的加強私隱模式播放器嵌入；載入或播放影片時，YouTube 可能會接收相關技術請求資料。"] },
+      { title: "第三方服務", body: ["網站及產品示範影片均透過第三方託管及網域服務提供。影片由 Mantle 網站直接播放，並非嵌入任何公開影片分享頻道。"] },
       { title: "查詢", body: ["私隱及網站相關問題可透過聯絡表格提交。隨著 Mantle 發展，本聲明仍須由合資格法律顧問審閱。"] },
     ] },
     terms: { title: "網站使用條款", intro: "以下初步條款適用於 Mantle Intelligence 公開網站。", sections: [
@@ -128,7 +128,7 @@ export const pageCopy = {
     privacy: { title: "隐私政策", intro: "本声明说明这个公开网站在现阶段可能处理的有限数据。", sections: [
       { title: "网站技术数据", body: ["网站托管服务商可能会接收提供页面所需的一般技术数据，例如 IP 地址、浏览器类型和请求时间。", "网站初期版本默认不启用侵入式分析或广告追踪器。"] },
       { title: "试点咨询", body: ["如果您联系 Mantle 咨询试点，我们可能会使用您主动提供的数据来理解并回复咨询。首次网站咨询请勿提交机密、受监管或敏感运营数据。"] },
-      { title: "第三方服务", body: ["网站使用第三方托管及域名服务。产品演示视频通过 YouTube 的增强隐私模式播放器嵌入；加载或播放视频时，YouTube 可能会接收相关技术请求信息。"] },
+      { title: "第三方服务", body: ["网站及产品演示视频均通过第三方托管及域名服务提供。视频由 Mantle 网站直接播放，并非嵌入任何公开视频分享频道。"] },
       { title: "咨询", body: ["隐私及网站相关问题可通过联系表格提交。随着 Mantle 发展，本声明仍须由合资格法律顾问审阅。"] },
     ] },
     terms: { title: "网站使用条款", intro: "以下初步条款适用于 Mantle Intelligence 公开网站。", sections: [
