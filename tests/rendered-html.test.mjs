@@ -26,6 +26,7 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.match(html, /AI adoption is moving faster than enterprise control/);
   assert.match(html, /Only the approved context leaves Mantle/);
   assert.match(html, /class="brand-plate brand-plate-localized"/);
+  assert.match(html, /class="brand-plate brand-plate-localized"[\s\S]*class="experience-band homepage-experience"[\s\S]*<\/figure>/);
   assert.match(html, /<span>Let people and AI agents work\. Keep authority under control\.<\/span>/);
   assert.doesNotMatch(html, /mantle-brand-plate\.png/);
   assert.match(html, /<video[^>]*controls[^>]*aria-label="Mantle Product Demo"/);

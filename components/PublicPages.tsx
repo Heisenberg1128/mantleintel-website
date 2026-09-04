@@ -22,6 +22,7 @@ function BrandPlate({ locale }: { locale: Locale }) {
         <div className="plate-lines plate-lines-top" /><div className="plate-gate" /><div className="plate-lines plate-lines-bottom" />
         <span className="plate-context">{p.plateContext}</span><span className="plate-ai">{p.plateAi}</span>
       </div>
+      <ExperienceLogos className="homepage-experience" locale={locale} />
     </figure>
   );
 }
@@ -50,8 +51,6 @@ export function PublicHome({ locale = "en" }: { locale?: Locale }) {
             <p className="hero-note">{c.hero.note}</p>
           </div>
         </section>
-
-        <ExperienceLogos className="homepage-experience" locale={locale} />
 
         <section className="planes-section section-pad">
           <div className="shell">
