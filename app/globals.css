@@ -190,6 +190,21 @@ h3 { font-size: 22px; line-height: 1.18; }
 .homepage-experience .experience-label { margin-bottom: 18px; }
 .homepage-experience .experience-note { margin-top: 16px; }
 
+.strategic-ecosystem { width: min(calc(100% - 48px), var(--max)); margin: 34px auto 0; padding: 28px 0 24px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.strategic-ecosystem-heading { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(360px, 1.2fr); align-items: end; gap: clamp(36px, 6vw, 110px); margin-bottom: 24px; }
+.strategic-ecosystem-heading .eyebrow { margin-bottom: 8px; }
+.strategic-ecosystem-heading h2 { margin: 0; font-size: clamp(27px, 2.2vw, 38px); letter-spacing: -.035em; }
+.strategic-ecosystem-heading > p { max-width: 650px; margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+.strategic-logo-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line); }
+.strategic-logo { display: flex; min-width: 0; min-height: 94px; align-items: center; gap: 14px; padding: 18px; border-right: 1px solid var(--line); background: rgba(255,255,255,.32); }
+.strategic-logo:last-child { border-right: 0; }
+.strategic-logo img { display: block; width: 43px; height: 43px; flex: 0 0 43px; object-fit: contain; filter: grayscale(1); opacity: .78; }
+.strategic-logo-aws img { width: 58px; height: 36px; flex-basis: 58px; }
+.strategic-logo-microsoft img { width: 66px; height: 34px; flex-basis: 66px; object-position: left center; }
+.strategic-logo strong { display: block; font-size: 15px; line-height: 1.2; }
+.strategic-logo small { display: block; margin-top: 6px; color: #767a78; font-size: 9px; line-height: 1.35; }
+.strategic-ecosystem-note { max-width: 1120px; margin: 16px 0 0; color: #858987; font-size: 10px; line-height: 1.5; }
+
 .control-diagram {
   position: relative;
   display: grid;
@@ -436,6 +451,9 @@ h3 { font-size: 22px; line-height: 1.18; }
   .capability-list article > div { grid-template-columns: 1fr; gap: 14px; }
   .founders-editorial { gap: 6vw; }
   .experience-logo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 30px; }
+  .strategic-logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .strategic-logo:nth-child(3) { border-right: 0; }
+  .strategic-logo:nth-child(n+4) { border-top: 1px solid var(--line); }
 }
 
 @media (max-width: 820px) {
@@ -460,6 +478,7 @@ h3 { font-size: 22px; line-height: 1.18; }
   .hero { padding-top: 14px; }
   .hero-copy { width: calc(100% - 28px); }
   .hero-support, .split-heading, .philosophy-grid, .future-grid, .mission-grid, .founders-editorial, .pilot-grid, .route-hero-grid, .company-route-grid, .company-editorial, .contact-grid, .why-now { grid-template-columns: 1fr; }
+  .strategic-ecosystem-heading { grid-template-columns: 1fr; gap: 12px; }
   .hero-support { gap: 28px; margin: 42px auto; }
   .hero-actions { grid-column: auto; }
   .brand-plate { aspect-ratio: 3 / 2; }
@@ -540,6 +559,13 @@ h3 { font-size: 22px; line-height: 1.18; }
   .experience-logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 34px; }
   .experience-logo { height: 42px; }
   .experience-note { font-size: 9px; }
+  .strategic-ecosystem { width: calc(100% - 28px); margin-top: 24px; padding-top: 24px; }
+  .strategic-logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .strategic-logo { min-height: 104px; padding: 16px; border-top: 0; }
+  .strategic-logo:nth-child(odd) { border-right: 1px solid var(--line); }
+  .strategic-logo:nth-child(even) { border-right: 0; }
+  .strategic-logo:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .strategic-logo:last-child { grid-column: 1 / -1; }
   .route-hero { padding: 52px 0 58px; }
   .route-hero-grid h1 { font-size: clamp(46px, 13.5vw, 62px); }
   .route-hero-grid > div > p { margin-top: 24px; font-size: 18px; }

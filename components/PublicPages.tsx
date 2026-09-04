@@ -6,6 +6,7 @@ import { LegalPage } from "./LegalPage";
 import { MarketingPage } from "./MarketingPage";
 import { PilotCta } from "./PilotCta";
 import { ProductDemo } from "./ProductDemo";
+import { StrategicEcosystem } from "./StrategicEcosystem";
 import { contentByLocale, interfaceCopy, localizedPath, type Locale } from "../content/i18n";
 import { pageCopy } from "../content/pages";
 
@@ -40,6 +41,7 @@ export function PublicHome({ locale = "en" }: { locale?: Locale }) {
           <div className="shell hero-copy">
             <h1 className="sr-only">Mantle Intelligence — {c.hero.headline}</h1>
             <BrandPlate locale={locale} />
+            <StrategicEcosystem locale={locale} />
             <div className="hero-support">
               <p className="eyebrow hero-support-label">{c.hero.eyebrow}</p>
               <p className="hero-support-body">{c.hero.body}</p>
