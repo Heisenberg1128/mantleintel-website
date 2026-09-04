@@ -21,9 +21,17 @@ export function ProductDemo({ video, locale = "en" }: ProductDemoProps) {
   const ui = interfaceCopy[locale];
   if (video.provider === "mp4" && video.source) {
     return (
-      <video className="demo-media" controls preload="metadata" poster={video.poster || undefined}>
+      // The supplied master has professionally burned-in captions on every frame.
+      // eslint-disable-next-line jsx-a11y/media-has-caption
+      <video
+        className="demo-media"
+        controls
+        playsInline
+        preload="metadata"
+        poster={video.poster || undefined}
+        aria-label={video.title}
+      >
         <source src={video.source} type="video/mp4" />
-        <track kind="captions" src="/demo/captions.vtt" srcLang="en" label="English" default />
         Your browser does not support HTML video.
       </video>
     );

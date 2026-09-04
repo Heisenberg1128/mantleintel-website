@@ -25,13 +25,25 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.doesNotMatch(html, /Two HKU MBA alumni|Selected professional backgrounds/);
   assert.match(html, /AI adoption is moving faster than enterprise control/);
   assert.match(html, /Only the approved context leaves Mantle/);
+  assert.match(html, /<video[^>]*controls[^>]*aria-label="Mantle Product Demo"/);
+  assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
+  assert.match(html, /Click Play to watch with sound/);
   assert.doesNotMatch(html, /@aqtif\.com/);
   for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "contact"]) {
     assert.match(html, new RegExp(`href="/${target}/"`));
   }
   assert.doesNotMatch(html, /href="\/#/);
-  assert.match(html, /href="https:\/\/mantlecorps\.com"/);
+  assert.doesNotMatch(html, /Product film placeholder|Mantle product demonstration video coming soon/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|trusted by leading|lorem ipsum/i);
+});
+
+test("the embedded product film is available across all three languages", async () => {
+  for (const path of ["/", "/zh-hk/", "/zh-cn/"]) {
+    const html = await (await render(path)).text();
+    assert.match(html, /<video[^>]*controls/);
+    assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
+    assert.doesNotMatch(html, /Product film placeholder|產品影片預留位置|产品视频预留位置/);
+  }
 });
 
 test("pilot enquiries submit privately to both configured recipients", async () => {

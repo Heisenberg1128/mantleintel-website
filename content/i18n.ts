@@ -219,18 +219,18 @@ export const interfaceCopy = {
     home: "Mantle Intelligence home", menu: "Menu", requestPilot: "Request a pilot", explore: "Explore", company: "Company", contact: "Contact", privacy: "Privacy", terms: "Terms",
     secureEnquiry: "Send your enquiry securely through the site.", copyright: "© 2026 Mantle Intelligence. All rights reserved.", swipe: "Swipe →", backHome: "← Back to home",
     legalEyebrow: "Website notice · Counsel review required", legalNotice: "This is an early-stage website placeholder and is not final legal advice. It should be reviewed by qualified counsel before substantive product launch.",
-    demoAlt: "Mantle product demonstration video coming soon", openPrototype: "Open live prototype", placeholderNote: "Product film placeholder · the finished demonstration will sit here.", originalContext: "Original context", approvedPayload: "Approved payload", keep: "KEEP", mask: "MASK", remove: "REMOVE",
+    demoAlt: "Mantle product demonstration video", openPrototype: "Open live prototype", placeholderNote: "Click Play to watch with sound · captions included.", originalContext: "Original context", approvedPayload: "Approved payload", keep: "KEEP", mask: "MASK", remove: "REMOVE",
   },
   "zh-hk": {
     home: "Mantle Intelligence 首頁", menu: "選單", requestPilot: "申請試點", explore: "探索", company: "公司", contact: "聯絡我們", privacy: "私隱政策", terms: "使用條款",
     secureEnquiry: "透過網站安全提交查詢。", copyright: "© 2026 Mantle Intelligence。保留所有權利。", swipe: "向右滑動 →", backHome: "← 返回首頁",
     legalEyebrow: "網站聲明 · 須由法律顧問審閱", legalNotice: "本頁內容是早期網站的暫擬版本，不構成最終法律意見。產品正式推出前，應交由合資格法律顧問審閱。",
-    demoAlt: "Mantle 產品示範影片即將推出", openPrototype: "開啟線上原型", placeholderNote: "產品影片預留位置 · 完整示範影片將於此播放。", originalContext: "原始內容", approvedPayload: "已批准內容", keep: "保留", mask: "遮罩", remove: "移除",
+    demoAlt: "Mantle 產品示範影片", openPrototype: "開啟線上原型", placeholderNote: "按下播放即可連同聲音觀看 · 影片已附字幕。", originalContext: "原始內容", approvedPayload: "已批准內容", keep: "保留", mask: "遮罩", remove: "移除",
   },
   "zh-cn": {
     home: "Mantle Intelligence 首页", menu: "菜单", requestPilot: "申请试点", explore: "探索", company: "公司", contact: "联系我们", privacy: "隐私政策", terms: "使用条款",
     secureEnquiry: "通过网站安全提交咨询。", copyright: "© 2026 Mantle Intelligence。保留所有权利。", swipe: "向右滑动 →", backHome: "← 返回首页",
     legalEyebrow: "网站声明 · 须由法律顾问审阅", legalNotice: "本页内容是早期网站的暂定版本，不构成最终法律意见。产品正式推出前，应交由合资格法律顾问审阅。",
-    demoAlt: "Mantle 产品演示视频即将推出", openPrototype: "打开在线原型", placeholderNote: "产品视频预留位置 · 完整演示视频将在此播放。", originalContext: "原始内容", approvedPayload: "已批准内容", keep: "保留", mask: "掩码", remove: "移除",
+    demoAlt: "Mantle 产品演示视频", openPrototype: "打开在线原型", placeholderNote: "点击播放即可连同声音观看 · 视频已配字幕。", originalContext: "原始内容", approvedPayload: "已批准内容", keep: "保留", mask: "掩码", remove: "移除",
   },
 } as const;
