@@ -37,8 +37,8 @@ export const siteContent = {
       "Before information reaches an external model, Mantle shows exactly what will be kept, masked or removed—and why.",
     note: "Only the approved context leaves Mantle.",
     video: {
-      provider: "mp4" as DemoProvider,
-      source: "/demo/mantle-product-demo.mp4",
+      provider: "youtube" as DemoProvider,
+      source: "2OyAKT60mw4",
       title: "Mantle Product Demo",
       poster: "",
     },

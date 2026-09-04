@@ -12,7 +12,9 @@ type ProductDemoProps = {
 };
 
 function embedUrl(provider: DemoProvider, source: string) {
-  if (provider === "youtube") return `https://www.youtube-nocookie.com/embed/${source}`;
+  if (provider === "youtube") {
+    return `https://www.youtube-nocookie.com/embed/${source}?rel=0&playsinline=1`;
+  }
   if (provider === "vimeo") return `https://player.vimeo.com/video/${source}`;
   return source;
 }
@@ -44,7 +46,7 @@ export function ProductDemo({ video, locale = "en" }: ProductDemoProps) {
         src={embedUrl(video.provider, video.source)}
         title={video.title}
         loading="lazy"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       />
     );
