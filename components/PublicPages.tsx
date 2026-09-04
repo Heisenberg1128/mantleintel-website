@@ -15,15 +15,6 @@ function languageTag(locale: Locale) {
 
 function BrandPlate({ locale }: { locale: Locale }) {
   const p = pageCopy[locale].home;
-  if (locale === "en") {
-    return (
-      <figure className="brand-plate">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/mantle-brand-plate.png" alt="Mantle Intelligence. Let people and AI agents work. Keep authority under control. A diagram shows organisational context passing through Mantle to approved AI." width={1536} height={1024} loading="eager" fetchPriority="high" />
-      </figure>
-    );
-  }
-
   return (
     <figure className="brand-plate brand-plate-localized" aria-label={`Mantle Intelligence。${p.plateTagline}`}>
       <div className="localized-plate-copy"><strong>Mantle<br />Intelligence</strong><span>{p.plateTagline}</span></div>

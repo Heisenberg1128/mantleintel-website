@@ -25,6 +25,9 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.doesNotMatch(html, /Two HKU MBA alumni|Selected professional backgrounds/);
   assert.match(html, /AI adoption is moving faster than enterprise control/);
   assert.match(html, /Only the approved context leaves Mantle/);
+  assert.match(html, /class="brand-plate brand-plate-localized"/);
+  assert.match(html, /<span>Let people and AI agents work\. Keep authority under control\.<\/span>/);
+  assert.doesNotMatch(html, /mantle-brand-plate\.png/);
   assert.match(html, /<video[^>]*controls[^>]*aria-label="Mantle Product Demo"/);
   assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
   assert.match(html, /Click Play to watch with sound/);
@@ -54,7 +57,8 @@ test("pilot enquiries submit privately to both configured recipients", async () 
 
   const handler = await readFile(new URL("../public/contact-submit.php", import.meta.url), "utf8");
   assert.match(handler, /contact@aqtif\.com/);
-  assert.match(handler, /alfred@aqtif\.com/);
+  assert.match(handler, /alfredlee2015@gmail\.com/);
+  assert.doesNotMatch(handler, /alfred@aqtif\.com/);
 });
 
 test("all corporate routes render directly", async () => {

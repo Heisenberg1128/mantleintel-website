@@ -156,7 +156,7 @@ h3 { font-size: 22px; line-height: 1.18; }
 .brand-plate-localized { display: grid; grid-template-columns: 1.02fr .98fr; align-items: stretch; padding: clamp(42px, 6vw, 100px); }
 .localized-plate-copy { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; }
 .localized-plate-copy strong { max-width: 720px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(65px, 8.4vw, 146px); font-weight: 400; letter-spacing: -.065em; line-height: .82; }
-.localized-plate-copy span { max-width: 560px; margin-top: 48px; padding-top: 30px; border-top: 1px solid #7f817e; color: #2c2f2e; font-size: clamp(20px, 1.9vw, 31px); line-height: 1.42; text-wrap: balance; }
+.localized-plate-copy span { max-width: 560px; margin-top: 48px; padding-top: 30px; border-top: 1px solid #7f817e; color: #2c2f2e; font-family: Arial, Helvetica, sans-serif; font-size: clamp(20px, 1.9vw, 31px); font-weight: 400; letter-spacing: -.025em; line-height: 1.42; text-wrap: balance; }
 .localized-plate-diagram { position: relative; min-height: 100%; }
 .plate-lines { position: absolute; left: 8%; right: 9%; height: 37%; opacity: .55; background: repeating-linear-gradient(0deg, transparent 0 17px, #8d908c 18px 19px); }
 .plate-lines::after { content: ""; position: absolute; inset: 0 0 0 36%; background: var(--paper); clip-path: polygon(0 0, 100% 0, 58% 100%, 0 100%); }
