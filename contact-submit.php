@@ -89,7 +89,7 @@ foreach ([$name, $organisation, $email, $role] as $headerValue) {
     }
 }
 
-$recipients = 'contact@aqtif.com, alfred@aqtif.com';
+$recipients = 'contact@aqtif.com, alfredlee2015@gmail.com';
 $subject = 'Mantle pilot enquiry — ' . substr($organisation, 0, 120);
 $body = "A new Mantle pilot enquiry was submitted through mantleintel.com.\n\n"
     . "Name: {$name}\n"
