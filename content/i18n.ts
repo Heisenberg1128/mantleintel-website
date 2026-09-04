@@ -110,9 +110,9 @@ const zhHk = {
     title: "策略合作夥伴與科技生態",
     intro: "與創辦團隊更廣泛科技工作相關的合作關係及產業計劃。",
     organisations: siteContent.strategicEcosystem.organisations.map((organisation) =>
-      organisation.key === "nvidia" ? { ...organisation, note: "創辦團隊透過 AQTIF 參與" } : organisation,
+      organisation.key === "nvidia" ? { ...organisation, note: "創辦團隊參與的產業計劃" } : organisation,
     ),
-    disclaimer: "NVIDIA Inception 會員資格由創辦團隊的關聯公司 AQTIF 持有，並非以 Mantle Intelligence 名義加入。其他標誌代表相關科技合作或生態關係，並不表示各機構對 Mantle Intelligence 的認可。",
+    disclaimer: "NVIDIA Inception 代表創辦團隊的初創計劃經驗。其他標誌代表相關科技合作或生態關係，並不表示各機構對 Mantle Intelligence 的認可。",
   },
   pilot: {
     eyebrow: "試點與設計夥伴",
@@ -217,9 +217,9 @@ const zhCn = {
     title: "战略合作伙伴与科技生态",
     intro: "与创始团队更广泛科技工作相关的合作关系及产业计划。",
     organisations: siteContent.strategicEcosystem.organisations.map((organisation) =>
-      organisation.key === "nvidia" ? { ...organisation, note: "创始团队通过 AQTIF 参与" } : organisation,
+      organisation.key === "nvidia" ? { ...organisation, note: "创始团队参与的产业计划" } : organisation,
     ),
-    disclaimer: "NVIDIA Inception 会员资格由创始团队的关联公司 AQTIF 持有，并非以 Mantle Intelligence 名义加入。其他标志代表相关科技合作或生态关系，并不表示各机构对 Mantle Intelligence 的认可。",
+    disclaimer: "NVIDIA Inception 代表创始团队的创业项目经验。其他标志代表相关科技合作或生态关系，并不表示各机构对 Mantle Intelligence 的认可。",
   },
   pilot: {
     eyebrow: "试点与设计伙伴",

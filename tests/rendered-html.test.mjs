@@ -28,8 +28,10 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.match(html, /class="brand-plate brand-plate-localized"/);
   assert.match(html, /class="brand-plate brand-plate-localized"[\s\S]*class="experience-band homepage-experience"[\s\S]*<\/figure>/);
   assert.match(html, /Our Strategic Partners &amp; Ecosystem/);
-  assert.match(html, /Founders participate through AQTIF/);
-  assert.match(html, /NVIDIA Inception membership is held by AQTIF/);
+  assert.match(html, /NVIDIA Inception Program/);
+  assert.match(html, /Founder programme participation/);
+  assert.doesNotMatch(html, /AQTIF/);
+  assert.ok(html.indexOf("NVIDIA Inception Program") < html.indexOf(">Apple<"));
   for (const logo of ["apple.svg", "nvidia.svg", "aws.png", "alibaba-cloud.svg", "microsoft.png"]) {
     assert.match(html, new RegExp(`/ecosystem/${logo.replace(".", "\\.")}`));
   }

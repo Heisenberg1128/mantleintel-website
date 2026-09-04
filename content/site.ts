@@ -123,13 +123,13 @@ export const siteContent = {
     title: "Our Strategic Partners & Ecosystem",
     intro: "Technology relationships and programmes connected to the founders’ broader work.",
     organisations: [
+      { key: "nvidia", name: "NVIDIA Inception Program", src: "/ecosystem/nvidia.svg", note: "Founder programme participation" },
       { key: "apple", name: "Apple", src: "/ecosystem/apple.svg", note: "" },
-      { key: "nvidia", name: "NVIDIA Inception", src: "/ecosystem/nvidia.svg", note: "Founders participate through AQTIF" },
       { key: "aws", name: "AWS", src: "/ecosystem/aws.png", note: "" },
       { key: "alibaba", name: "Alibaba Cloud", src: "/ecosystem/alibaba-cloud.svg", note: "" },
       { key: "microsoft", name: "Microsoft", src: "/ecosystem/microsoft.png", note: "" },
     ],
-    disclaimer: "NVIDIA Inception membership is held by AQTIF, a founder-affiliated company, rather than Mantle Intelligence. Other marks identify relevant technology or ecosystem relationships; no endorsement of Mantle Intelligence is implied.",
+    disclaimer: "NVIDIA Inception reflects the founders’ startup-program experience. Other marks identify relevant technology or ecosystem relationships; no endorsement of Mantle Intelligence is implied.",
   },
   pilot: {
     eyebrow: "Pilot and design partner conversations",

@@ -468,12 +468,12 @@ h3 { font-size: 22px; line-height: 1.18; }
   .mobile-nav nav a { padding: 10px; }
   .mobile-language-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
   .mobile-language-links a { padding-inline: 4px !important; color: #5f6361; font-size: 12px; text-align: center; }
-  .brand-plate-localized { grid-template-columns: 1fr; min-height: 690px; padding: 38px; }
+  .brand-plate-localized { grid-template-columns: 1fr; min-height: 690px; padding: 38px 38px 0; }
   .localized-plate-copy { justify-content: flex-start; }
   .localized-plate-copy strong { font-size: clamp(60px, 16vw, 108px); }
   .localized-plate-copy span { margin-top: 30px; padding-top: 18px; }
   .localized-plate-diagram { min-height: 270px; }
-  .homepage-experience { position: static; grid-column: 1; margin: 26px -38px -38px; background: rgba(245, 242, 236, .94); }
+  .homepage-experience { position: static; grid-column: 1; margin: 26px -38px 0; background: rgba(245, 242, 236, .94); }
   .homepage-experience .shell { width: calc(100% - 76px); padding: 28px 0 24px; }
   .hero { padding-top: 14px; }
   .hero-copy { width: calc(100% - 28px); }
@@ -481,7 +481,7 @@ h3 { font-size: 22px; line-height: 1.18; }
   .strategic-ecosystem-heading { grid-template-columns: 1fr; gap: 12px; }
   .hero-support { gap: 28px; margin: 42px auto; }
   .hero-actions { grid-column: auto; }
-  .brand-plate { aspect-ratio: 3 / 2; }
+  .brand-plate { aspect-ratio: auto; overflow: visible; }
   .control-diagram { grid-template-columns: 1fr; padding: 30px; }
   .diagram-rail { top: 10%; bottom: 10%; left: 50%; right: auto; width: 1px; height: auto; }
   .diagram-node { align-items: flex-start; text-align: left; }
@@ -528,7 +528,7 @@ h3 { font-size: 22px; line-height: 1.18; }
   h1 { font-size: clamp(48px, 14vw, 66px); }
   h2 { font-size: clamp(38px, 11vw, 52px); }
   .hero { padding-top: 12px; }
-  .brand-plate { aspect-ratio: 3 / 2; }
+  .brand-plate { aspect-ratio: auto; }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .hero-actions .button { width: 100%; }
   .control-diagram { min-height: 620px; padding: 20px; }
