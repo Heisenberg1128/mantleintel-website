@@ -60,7 +60,9 @@ test("use cases combine practical workflows with the client-sector matrix", asyn
   assert.match(html, /Professional services/);
   assert.match(html, /Regulated industries &amp; critical services/);
   assert.match(html, /<table class="sector-table">/);
+  assert.match(html, /class="sector-emblem"/);
   assert.match(html, /What Mantle helps with/);
+  assert.ok(html.indexOf("Built for organisations where trust is non-negotiable") < html.indexOf("Document review"));
 });
 
 test("the embedded product film is available across all three languages", async () => {

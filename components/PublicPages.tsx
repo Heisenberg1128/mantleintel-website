@@ -135,14 +135,18 @@ export function PublicHow({ locale = "en" }: { locale?: Locale }) {
 
 export function PublicUseCases({ locale = "en" }: { locale?: Locale }) {
   const c = contentByLocale[locale]; const p = pageCopy[locale].cases; const ui = interfaceCopy[locale];
+  const sectorCodes = ["ENT", "GOV", "FIN", "EDU", "PRO", "REG"];
   return <MarketingPage locale={locale} route="use-cases" eyebrow={p.eyebrow} title={p.title} intro={p.intro}>
-    <section className="route-section route-paper"><div className="shell"><p className="swipe-cue" aria-hidden="true">{ui.swipe}</p><div className="use-case-grid mobile-rail" role="region" aria-label={p.eyebrow}>{c.useCases.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{item.title}</h2><p>{item.body}</p></article>)}</div></div></section>
     <section className="route-section sector-section"><div className="shell">
       <div className="sector-heading"><p className="eyebrow">{c.sectors.eyebrow}</p><div><h2>{c.sectors.title}</h2><p>{c.sectors.body}</p></div></div>
       <div className="sector-table-wrap" role="region" aria-label={c.sectors.title}>
-        <table className="sector-table"><thead><tr><th scope="col">{c.sectors.columns.sector}</th><th scope="col">{c.sectors.columns.help}</th></tr></thead><tbody>{c.sectors.rows.map((row) => <tr key={row.sector}><th scope="row">{row.sector}</th><td>{row.help}</td></tr>)}</tbody></table>
+        <table className="sector-table"><thead><tr><th scope="col">{c.sectors.columns.sector}</th><th scope="col">{c.sectors.columns.help}</th></tr></thead><tbody>{c.sectors.rows.map((row, index) => <tr key={row.sector}>
+          <th scope="row"><span className="sector-identity"><span className="sector-emblem" aria-hidden="true"><i>{sectorCodes[index]}</i></span><span><small>{String(index + 1).padStart(2, "0")}</small><strong>{row.sector}</strong></span></span></th>
+          <td><span>{row.help}</span><i className="sector-arrow" aria-hidden="true">→</i></td>
+        </tr>)}</tbody></table>
       </div>
     </div></section>
+    <section className="route-section route-paper"><div className="shell"><div className="section-heading narrow sector-workflow-heading"><p className="eyebrow">{p.eyebrow}</p><h2>{p.title}</h2></div><p className="swipe-cue" aria-hidden="true">{ui.swipe}</p><div className="use-case-grid mobile-rail" role="region" aria-label={p.eyebrow}>{c.useCases.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{item.title}</h2><p>{item.body}</p></article>)}</div></div></section>
     <PilotCta locale={locale} />
   </MarketingPage>;
 }
