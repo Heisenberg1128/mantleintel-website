@@ -3,7 +3,7 @@ import type { Locale } from "./i18n";
 export const pageCopy = {
   en: {
     home: {
-      plateTagline: "Let people and AI agents work. Keep authority under control.", plateContext: "ORGANISATIONAL CONTEXT", plateAi: "APPROVED AI",
+      plateTagline: "Trust is not assumed. It is governed.", plateTrust: "CONTROL → EVIDENCE → TRUST", plateContext: "ORGANISATIONAL CONTEXT", plateAi: "APPROVED AI",
       planesEyebrow: "Data governance for AI workflows", planesTitle: "Govern data before intelligence is invoked.", planesBody: "Mantle governs how organisational data is selected, classified, transformed, approved, exposed to AI systems, routed, retained and evidenced in the context of AI work.",
       whyEyebrow: "Why now?", whyTitle: "AI adoption is moving faster than enterprise control.", whyBody: "Employees already use multiple AI models. Agents are beginning to access systems and act on behalf of users. Governance has to move from model-level security to control over data, authority and action.",
       boundaryLabel: "01 · Governed boundary", boundaryLink: "See how it works", capabilitiesEyebrow: "Product capabilities", capabilitiesTitle: "Four controls that make AI usable.",
@@ -11,11 +11,11 @@ export const pageCopy = {
       sequence: ["See", "Propose", "Approve", "Act", "Evidence"],
     },
     product: {
-      eyebrow: "Employee AI Workspace · Current prototype", title: "Useful AI work, through a governed boundary.", intro: "Ask, attach and analyse in one workspace. Mantle applies task-aware data controls before an approved model receives the exact payload.",
+      eyebrow: "Employee AI Workspace · Current prototype", title: "Useful AI work, through a trusted boundary.", intro: "Ask, attach and analyse in one workspace. Mantle makes the controls visible before an approved model receives the exact payload, so trust can be verified rather than assumed.",
       demoEyebrow: "Product demonstration", demoTitle: "See what leaves Mantle.", controlsEyebrow: "Control language", controlsTitle: "Clear treatments. Exact consequences.", capabilitiesEyebrow: "Product capabilities", capabilitiesTitle: "Control around intelligence.", architectureEyebrow: "Architecture in development", architectureTitle: "Data → AI → action governance.",
     },
-    how: { eyebrow: "How it works", title: "AI understands. Policy authorises.", intro: "Mantle lets the task proceed while keeping deterministic organisational policy in control of data, model access, approvals and evidence.", planesEyebrow: "Three governed planes", planesTitle: "Control what AI can see, receive and do." },
-    cases: { eyebrow: "Use cases", title: "Start with a workflow, not a transformation programme.", intro: "Mantle is designed around practical work where AI creates value and data, permissions or accountability still matter." },
+    how: { eyebrow: "How it works", title: "AI understands. Policy authorises. Evidence earns trust.", intro: "Mantle lets the task proceed while deterministic organisational policy controls data, model access and approvals—and leaves evidence that people can verify.", planesEyebrow: "Three governed planes", planesTitle: "Control what AI can see, receive and do." },
+    cases: { eyebrow: "Use cases", title: "Put AI to work where trust matters most.", intro: "Start with one practical workflow where AI creates value and data, permissions or accountability cannot be left to assumption." },
     vision: {
       eyebrow: "Vision", title: "Intelligence will become abundant. Trust and authority will not.", intro: "The scarce enterprise layer is becoming context, permissions, authority and evidence—not access to another model.",
       today: "Today · Current prototype", todayTitle: "Govern what AI can see and use.", todayBody: "The Employee AI Workspace governs prompts, documents, data treatments, approved model routes and safe evidence.",
@@ -23,7 +23,7 @@ export const pageCopy = {
       planesEyebrow: "Data → AI → action", planesTitle: "A control layer for increasingly capable systems.",
     },
     company: {
-      eyebrow: "Company", perspective: "Founding perspective", perspectiveTitle: "Built for serious organisations.",
+      eyebrow: "Company", perspective: "Founding perspective", perspectiveTitle: "Built for organisations where trust is non-negotiable.",
       perspectiveBody: ["Mantle’s founding team combines institutional finance with hands-on operating experience across regulated financial services, corporate operations, digital assets, Web3, blockchain and emerging technology.", "That combination shapes a product designed to make AI useful inside real organisations—where data boundaries, delegated authority and accountable decisions matter."],
       hongKong: "Hong Kong", hongKongTitle: "Built in Hong Kong. Designed across jurisdictions.", hongKongBody: "Hong Kong combines global finance, regulated institutions, cross-border data considerations, universities, public bodies and enterprise technology adoption in one compact market—a strong place to build and validate governed AI workflows before expanding across Asia.",
     },
@@ -49,7 +49,7 @@ export const pageCopy = {
   },
   "zh-hk": {
     home: {
-      plateTagline: "讓人與 AI 智能體高效協作，讓權限始終受控。", plateContext: "企業情境", plateAi: "已批准 AI",
+      plateTagline: "信任不是預設條件，而是治理的結果。", plateTrust: "清晰管控 → 可驗證證據 → 建立信任", plateContext: "企業情境", plateAi: "已批准 AI",
       planesEyebrow: "AI 工作流程的資料治理", planesTitle: "先管好資料，再啟用智能。", planesBody: "Mantle 以工作情境為基礎，管理企業資料如何被選取、分類、轉換、審批、傳送至 AI、路由、保存及形成證據。",
       whyEyebrow: "為何是現在？", whyTitle: "AI 的採用速度，已超越企業的管控能力。", whyBody: "員工已在使用多種 AI 模型，AI 智能體亦開始存取系統並代表使用者執行工作。治理不能只停留在模型安全，還要管控資料、權限與行動。",
       boundaryLabel: "01 · 受控邊界", boundaryLink: "了解運作方式", capabilitiesEyebrow: "產品能力", capabilitiesTitle: "四項核心控制，讓企業放心使用 AI。",
@@ -57,11 +57,11 @@ export const pageCopy = {
       sequence: ["檢視", "建議", "批准", "執行", "留證"],
     },
     product: {
-      eyebrow: "員工 AI 工作空間 · 現有原型", title: "讓實際 AI 工作，在受控邊界內完成。", intro: "在同一工作空間提出問題、加入附件及進行分析。Mantle 先按工作需要處理資料，再把實際批准內容送往合規模型。",
+      eyebrow: "員工 AI 工作空間 · 現有原型", title: "讓實際 AI 工作，在可信邊界內完成。", intro: "在同一工作空間提出問題、加入附件及進行分析。Mantle 先展示並執行資料管控，再把實際批准內容送往合規模型，讓信任有據可查。",
       demoEyebrow: "產品示範", demoTitle: "清楚看見哪些內容會離開 Mantle。", controlsEyebrow: "處理方式", controlsTitle: "簡單清晰的選項，對應明確後果。", capabilitiesEyebrow: "產品能力", capabilitiesTitle: "為 AI 建立完整控制。", architectureEyebrow: "架構開發中", architectureTitle: "資料 → AI → 行動治理。",
     },
-    how: { eyebrow: "運作方式", title: "AI 負責理解，政策決定是否授權。", intro: "Mantle 讓工作繼續進行，同時以可驗證的企業政策管控資料、模型存取、審批及證據。", planesEyebrow: "三個治理層面", planesTitle: "管控 AI 可以看見、接收和執行甚麼。" },
-    cases: { eyebrow: "應用場景", title: "由一個工作流程開始，而不是先推動龐大轉型。", intro: "Mantle 針對真正有價值的日常工作而設，尤其適合需要兼顧資料、權限及問責的場景。" },
+    how: { eyebrow: "運作方式", title: "AI 負責理解，政策負責授權，證據建立信任。", intro: "Mantle 讓工作繼續進行，同時以企業政策管控資料、模型存取與審批，並留下可驗證紀錄。", planesEyebrow: "三個治理層面", planesTitle: "管控 AI 可以看見、接收和執行甚麼。" },
+    cases: { eyebrow: "應用場景", title: "在最需要信任的工作中善用 AI。", intro: "由一個實際流程開始：AI 能創造價值，而資料、權限與問責不能依靠假設。" },
     vision: {
       eyebrow: "願景", title: "智能將愈來愈普及，但信任與授權仍然稀缺。", intro: "企業真正需要掌握的，不是再多一個模型，而是情境、權限、授權與證據。",
       today: "今天 · 現有原型", todayTitle: "管控 AI 可以看見和使用甚麼。", todayBody: "員工 AI 工作空間管控提示、文件、資料處理方式、獲批准模型路由及安全證據。",
@@ -69,7 +69,7 @@ export const pageCopy = {
       planesEyebrow: "資料 → AI → 行動", planesTitle: "為能力不斷提升的系統建立控制層。",
     },
     company: {
-      eyebrow: "關於我們", perspective: "創辦理念", perspectiveTitle: "為重視責任與管治的企業而建。",
+      eyebrow: "關於我們", perspective: "創辦理念", perspectiveTitle: "為信任不可妥協的機構而建。",
       perspectiveBody: ["Mantle 創辦團隊結合機構金融經驗與實際營運能力，背景涵蓋受監管金融服務、企業營運、數碼資產、Web3、區塊鏈與新興科技。", "這些經驗塑造出一款面向真實企業環境的產品：AI 必須有用，同時資料界線、授權範圍與決策責任必須清楚。"],
       hongKong: "香港", hongKongTitle: "建基香港，面向跨地域企業。", hongKongBody: "香港在一個緊密市場中匯聚環球金融、受監管機構、跨境資料議題、大學、公共機構及企業科技應用，是驗證治理型 AI 工作流程並拓展亞洲市場的理想起點。",
     },
@@ -95,7 +95,7 @@ export const pageCopy = {
   },
   "zh-cn": {
     home: {
-      plateTagline: "让人与 AI 智能体高效协作，让权限始终受控。", plateContext: "企业上下文", plateAi: "获准 AI",
+      plateTagline: "信任不是默认条件，而是治理的结果。", plateTrust: "清晰管控 → 可验证证据 → 建立信任", plateContext: "企业上下文", plateAi: "获准 AI",
       planesEyebrow: "AI 工作流的数据治理", planesTitle: "先管好数据，再启用智能。", planesBody: "Mantle 以工作上下文为基础，管理企业数据如何被选取、分类、转换、审批、发送至 AI、路由、保存并形成证据。",
       whyEyebrow: "为什么是现在？", whyTitle: "AI 的采用速度，已经超过企业的管控能力。", whyBody: "员工已经在使用多种 AI 模型，AI 智能体也开始访问系统并代表用户执行工作。治理不能只停留在模型安全，还要管控数据、权限与行动。",
       boundaryLabel: "01 · 受控边界", boundaryLink: "了解工作原理", capabilitiesEyebrow: "产品能力", capabilitiesTitle: "四项核心控制，让企业放心使用 AI。",
@@ -103,11 +103,11 @@ export const pageCopy = {
       sequence: ["查看", "建议", "批准", "执行", "留证"],
     },
     product: {
-      eyebrow: "员工 AI 工作空间 · 现有原型", title: "让实际 AI 工作，在受控边界内完成。", intro: "在同一工作空间提出问题、添加附件并进行分析。Mantle 先按工作需要处理数据，再将实际批准内容发送给合规模型。",
+      eyebrow: "员工 AI 工作空间 · 现有原型", title: "让实际 AI 工作，在可信边界内完成。", intro: "在同一工作空间提出问题、添加附件并进行分析。Mantle 先展示并执行数据管控，再将实际批准内容发送给合规模型，让信任有据可查。",
       demoEyebrow: "产品演示", demoTitle: "清楚看到哪些内容会离开 Mantle。", controlsEyebrow: "处理方式", controlsTitle: "简单清晰的选项，对应明确结果。", capabilitiesEyebrow: "产品能力", capabilitiesTitle: "为 AI 建立完整控制。", architectureEyebrow: "架构开发中", architectureTitle: "数据 → AI → 行动治理。",
     },
-    how: { eyebrow: "工作原理", title: "AI 负责理解，政策决定是否授权。", intro: "Mantle 让工作继续进行，同时以可验证的企业政策管控数据、模型访问、审批和证据。", planesEyebrow: "三个治理层面", planesTitle: "管控 AI 可以看到、接收和执行什么。" },
-    cases: { eyebrow: "应用场景", title: "从一个工作流开始，而不是先推动庞大转型。", intro: "Mantle 针对真正有价值的日常工作而设计，尤其适合需要兼顾数据、权限和问责的场景。" },
+    how: { eyebrow: "工作原理", title: "AI 负责理解，政策负责授权，证据建立信任。", intro: "Mantle 让工作继续进行，同时以企业政策管控数据、模型访问和审批，并留下可验证记录。", planesEyebrow: "三个治理层面", planesTitle: "管控 AI 可以看到、接收和执行什么。" },
+    cases: { eyebrow: "应用场景", title: "在最需要信任的工作中充分利用 AI。", intro: "从一个实际工作流开始：AI 能创造价值，而数据、权限和问责不能依靠假设。" },
     vision: {
       eyebrow: "愿景", title: "智能将越来越普及，但信任与授权仍然稀缺。", intro: "企业真正需要掌握的，不是再多一个模型，而是上下文、权限、授权与证据。",
       today: "今天 · 现有原型", todayTitle: "管控 AI 可以看到和使用什么。", todayBody: "员工 AI 工作空间管控提示、文件、数据处理方式、获批准模型路由和安全证据。",
@@ -115,7 +115,7 @@ export const pageCopy = {
       planesEyebrow: "数据 → AI → 行动", planesTitle: "为能力不断提升的系统建立控制层。",
     },
     company: {
-      eyebrow: "关于我们", perspective: "创办理念", perspectiveTitle: "为重视责任与治理的企业而建。",
+      eyebrow: "关于我们", perspective: "创办理念", perspectiveTitle: "为信任不可妥协的机构而设计。",
       perspectiveBody: ["Mantle 创始团队结合机构金融经验与实际运营能力，背景涵盖受监管金融服务、企业运营、数字资产、Web3、区块链与新兴科技。", "这些经验塑造出一款面向真实企业环境的产品：AI 必须有用，同时数据边界、授权范围与决策责任必须清楚。"],
       hongKong: "香港", hongKongTitle: "立足香港，面向跨地域企业。", hongKongBody: "香港在一个紧密市场中汇聚全球金融、受监管机构、跨境数据议题、大学、公共机构与企业科技应用，是验证治理型 AI 工作流并拓展亚洲市场的理想起点。",
     },

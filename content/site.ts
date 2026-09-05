@@ -16,10 +16,10 @@ export const siteContent = {
   ],
   hero: {
     eyebrow: "Enterprise AI & data governance",
-    headline: "Let people and AI agents work. Keep authority under control.",
+    headline: "Trust is not assumed. It is governed.",
     body:
-      "Mantle is the governance layer between your organisation’s data, people and AI. Control what data can be used, which models can receive it, what actions are allowed, and what evidence remains.",
-    note: "Built for organisations where AI adoption cannot come at the cost of data control, accountability or productivity.",
+      "Mantle governs the data, models, approvals and evidence behind AI work—so people can use AI productively and organisations can trust how the result was produced.",
+    note: "Built for organisations where trust is non-negotiable.",
     primaryCta: "Request a pilot",
     secondaryCta: "Explore the product",
   },
@@ -76,6 +76,20 @@ export const siteContent = {
     { title: "Research and education", body: "Work across sensitive research, administrative and institutional documents with clearer controls and accountability." },
     { title: "Regulated work", body: "Explore productive AI workflows while retaining permissions, approvals and evidence around their use." },
   ],
+  sectors: {
+    eyebrow: "Who Mantle is for",
+    title: "Built for organisations where trust is non-negotiable.",
+    body: "From banks and government departments to schools and enterprise teams, Mantle helps organisations put AI to work on sensitive information while keeping data, models, approvals and evidence under control.",
+    columns: { sector: "Sector", help: "What Mantle helps with" },
+    rows: [
+      { sector: "Enterprise & private sector", help: "Increase everyday productivity without creating uncontrolled exposure of customer or commercially sensitive data." },
+      { sector: "Government & public sector", help: "Accelerate review work while protecting citizen information, financial details, approvals and decision evidence." },
+      { sector: "Banks & financial services", help: "Use AI for KYC, risk and compliance work while keeping sensitive financial information within policy." },
+      { sector: "Schools, universities & research", help: "Give staff useful AI tools while protecting student privacy, research data and institutional accountability." },
+      { sector: "Professional services", help: "Deliver client work faster while enforcing client confidentiality, firm policy and approved model access." },
+      { sector: "Regulated industries & critical services", help: "Explore high-value AI workflows while preserving data access controls, human approvals and traceable evidence." },
+    ],
+  },
   philosophy: {
     eyebrow: "Architectural principle",
     headline: "Governance should understand the work.",
@@ -120,8 +134,8 @@ export const siteContent = {
   },
   strategicEcosystem: {
     eyebrow: "Technology ecosystem",
-    title: "Our Strategic Partners & Ecosystem",
-    intro: "Technology relationships and programmes connected to the founders’ broader work.",
+    title: "Our Strategic Partners",
+    intro: "",
     organisations: [
       { key: "nvidia", name: "NVIDIA Inception Program", src: "/ecosystem/nvidia.svg", note: "Founder programme participation" },
       { key: "apple", name: "Apple", src: "/ecosystem/apple.svg", note: "" },
@@ -129,7 +143,7 @@ export const siteContent = {
       { key: "alibaba", name: "Alibaba Cloud", src: "/ecosystem/alibaba-cloud.svg", note: "" },
       { key: "microsoft", name: "Microsoft", src: "/ecosystem/microsoft.png", note: "" },
     ],
-    disclaimer: "NVIDIA Inception reflects the founders’ startup-program experience. Other marks identify relevant technology or ecosystem relationships; no endorsement of Mantle Intelligence is implied.",
+    disclaimer: "",
   },
   pilot: {
     eyebrow: "Pilot and design partner conversations",

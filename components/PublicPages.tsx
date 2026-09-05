@@ -22,6 +22,7 @@ function BrandPlate({ locale }: { locale: Locale }) {
       <div className="localized-plate-diagram" aria-hidden="true">
         <div className="plate-lines plate-lines-top" /><div className="plate-gate" /><div className="plate-lines plate-lines-bottom" />
         <span className="plate-context">{p.plateContext}</span><span className="plate-ai">{p.plateAi}</span>
+        <strong className="plate-trust">{p.plateTrust}</strong>
       </div>
       <ExperienceLogos className="homepage-experience" locale={locale} />
     </figure>
@@ -134,7 +135,16 @@ export function PublicHow({ locale = "en" }: { locale?: Locale }) {
 
 export function PublicUseCases({ locale = "en" }: { locale?: Locale }) {
   const c = contentByLocale[locale]; const p = pageCopy[locale].cases; const ui = interfaceCopy[locale];
-  return <MarketingPage locale={locale} route="use-cases" eyebrow={p.eyebrow} title={p.title} intro={p.intro}><section className="route-section route-paper"><div className="shell"><p className="swipe-cue" aria-hidden="true">{ui.swipe}</p><div className="use-case-grid mobile-rail" role="region" aria-label={p.eyebrow}>{c.useCases.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{item.title}</h2><p>{item.body}</p></article>)}</div></div></section><PilotCta locale={locale} /></MarketingPage>;
+  return <MarketingPage locale={locale} route="use-cases" eyebrow={p.eyebrow} title={p.title} intro={p.intro}>
+    <section className="route-section route-paper"><div className="shell"><p className="swipe-cue" aria-hidden="true">{ui.swipe}</p><div className="use-case-grid mobile-rail" role="region" aria-label={p.eyebrow}>{c.useCases.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{item.title}</h2><p>{item.body}</p></article>)}</div></div></section>
+    <section className="route-section sector-section"><div className="shell">
+      <div className="sector-heading"><p className="eyebrow">{c.sectors.eyebrow}</p><div><h2>{c.sectors.title}</h2><p>{c.sectors.body}</p></div></div>
+      <div className="sector-table-wrap" role="region" aria-label={c.sectors.title}>
+        <table className="sector-table"><thead><tr><th scope="col">{c.sectors.columns.sector}</th><th scope="col">{c.sectors.columns.help}</th></tr></thead><tbody>{c.sectors.rows.map((row) => <tr key={row.sector}><th scope="row">{row.sector}</th><td>{row.help}</td></tr>)}</tbody></table>
+      </div>
+    </div></section>
+    <PilotCta locale={locale} />
+  </MarketingPage>;
 }
 
 export function PublicVision({ locale = "en" }: { locale?: Locale }) {

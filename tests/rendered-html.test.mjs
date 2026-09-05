@@ -16,7 +16,7 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Mantle Intelligence \| Enterprise AI &amp; Data Governance/);
-  assert.match(html, /Let people and AI agents work/);
+  assert.match(html, /Trust is not assumed\. It is governed\./);
   assert.match(html, /Data governance for AI/);
   assert.match(html, /Institutional judgement\. Operator execution\. Built in Hong Kong\./);
   assert.match(html, /The founding team brings experience from/);
@@ -27,7 +27,7 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.match(html, /Only the approved context leaves Mantle/);
   assert.match(html, /class="brand-plate brand-plate-localized"/);
   assert.match(html, /class="brand-plate brand-plate-localized"[\s\S]*class="experience-band homepage-experience"[\s\S]*<\/figure>/);
-  assert.match(html, /Our Strategic Partners &amp; Ecosystem/);
+  assert.match(html, /Our Strategic Partners/);
   assert.match(html, /NVIDIA Inception Program/);
   assert.match(html, /Founder programme participation/);
   assert.doesNotMatch(html, /AQTIF/);
@@ -35,7 +35,8 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   for (const logo of ["apple.svg", "nvidia.svg", "aws.png", "alibaba-cloud.svg", "microsoft.png"]) {
     assert.match(html, new RegExp(`/ecosystem/${logo.replace(".", "\\.")}`));
   }
-  assert.match(html, /<span>Let people and AI agents work\. Keep authority under control\.<\/span>/);
+  assert.match(html, /<span>Trust is not assumed\. It is governed\.<\/span>/);
+  assert.match(html, /CONTROL → EVIDENCE → TRUST/);
   assert.doesNotMatch(html, /mantle-brand-plate\.png/);
   assert.match(html, /<video[^>]*controls[^>]*aria-label="Mantle Product Demo"/);
   assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
@@ -47,6 +48,19 @@ test("homepage renders the revised Mantle narrative and clean navigation", async
   assert.doesNotMatch(html, /href="\/#/);
   assert.doesNotMatch(html, /Product film placeholder|Mantle product demonstration video coming soon/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|trusted by leading|lorem ipsum/i);
+});
+
+test("use cases combine practical workflows with the client-sector matrix", async () => {
+  const html = await (await render("/use-cases/")).text();
+  assert.match(html, /Built for organisations where trust is non-negotiable\./);
+  assert.match(html, /Enterprise &amp; private sector/);
+  assert.match(html, /Government &amp; public sector/);
+  assert.match(html, /Banks &amp; financial services/);
+  assert.match(html, /Schools, universities &amp; research/);
+  assert.match(html, /Professional services/);
+  assert.match(html, /Regulated industries &amp; critical services/);
+  assert.match(html, /<table class="sector-table">/);
+  assert.match(html, /What Mantle helps with/);
 });
 
 test("the embedded product film is available across all three languages", async () => {

@@ -10,7 +10,7 @@ export function StrategicEcosystem({ locale = "en" }: { locale?: Locale }) {
           <p className="eyebrow">{ecosystem.eyebrow}</p>
           <h2 id={`strategic-ecosystem-${locale}`}>{ecosystem.title}</h2>
         </div>
-        <p>{ecosystem.intro}</p>
+        {ecosystem.intro ? <p>{ecosystem.intro}</p> : null}
       </div>
       <div className="strategic-logo-grid">
         {ecosystem.organisations.map((organisation) => (
@@ -25,7 +25,7 @@ export function StrategicEcosystem({ locale = "en" }: { locale?: Locale }) {
           </div>
         ))}
       </div>
-      <p className="strategic-ecosystem-note">{ecosystem.disclaimer}</p>
+      {ecosystem.disclaimer ? <p className="strategic-ecosystem-note">{ecosystem.disclaimer}</p> : null}
     </section>
   );
 }

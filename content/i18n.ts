@@ -35,9 +35,9 @@ const zhHk = {
   hero: {
     ...siteContent.hero,
     eyebrow: "企業 AI 與資料治理",
-    headline: "讓人與 AI 智能體高效協作，讓權限始終受控。",
-    body: "Mantle 是連接企業資料、人員與 AI 的治理層。企業可清楚決定哪些資料可以使用、哪些模型可以接收、下一步可以執行甚麼，以及需要保留哪些稽核證據。",
-    note: "為重視資料管控、問責與生產力的企業而設。",
+    headline: "信任不是預設條件，而是治理的結果。",
+    body: "Mantle 管理 AI 工作背後的資料、模型、審批與證據，讓員工安心使用 AI，也讓企業清楚知道每個結果如何產生。",
+    note: "為信任不可妥協的機構而設。",
     primaryCta: "申請試點",
     secondaryCta: "了解產品",
   },
@@ -82,6 +82,20 @@ const zhHk = {
     { title: "研究與教育", body: "處理敏感研究、行政及機構文件時，保留清晰控制與問責紀錄。" },
     { title: "受監管工作", body: "在權限、審批及證據完整的前提下，探索具生產力的 AI 流程。" },
   ],
+  sectors: {
+    eyebrow: "適用機構",
+    title: "為信任不可妥協的機構而設。",
+    body: "由銀行、政府部門到學校及企業團隊，Mantle 協助機構在處理敏感資料時善用 AI，同時管好資料、模型、審批與證據。",
+    columns: { sector: "行業", help: "Mantle 如何協助" },
+    rows: [
+      { sector: "企業及私人機構", help: "提升日常工作效率，同時避免客戶資料及商業機密在未受控情況下外洩。" },
+      { sector: "政府及公共機構", help: "加快文件與個案審閱，同時保護市民資料、財務資料、審批與決策紀錄。" },
+      { sector: "銀行及金融服務", help: "在政策範圍內使用 AI 支援 KYC、風險管理及合規工作，保護敏感金融資料。" },
+      { sector: "學校、大學及研究機構", help: "讓教職員善用 AI，同時保障學生私隱、研究資料及機構問責。" },
+      { sector: "專業服務", help: "在遵守客戶保密要求、公司政策及核准模型範圍下，更快完成客戶工作。" },
+      { sector: "受監管行業及關鍵服務", help: "探索高價值 AI 流程，同時保留資料存取控制、人工審批及可追溯證據。" },
+    ],
+  },
   future: {
     ...siteContent.future,
     eyebrow: "未來方向 · Agent Workrooms",
@@ -106,13 +120,13 @@ const zhHk = {
   },
   strategicEcosystem: {
     ...siteContent.strategicEcosystem,
-    eyebrow: "策略科技生態",
-    title: "策略合作夥伴與科技生態",
-    intro: "與創辦團隊更廣泛科技工作相關的合作關係及產業計劃。",
+    eyebrow: "科技生態",
+    title: "策略合作夥伴",
+    intro: "",
     organisations: siteContent.strategicEcosystem.organisations.map((organisation) =>
       organisation.key === "nvidia" ? { ...organisation, note: "創辦團隊參與的產業計劃" } : organisation,
     ),
-    disclaimer: "NVIDIA Inception 代表創辦團隊的初創計劃經驗。其他標誌代表相關科技合作或生態關係，並不表示各機構對 Mantle Intelligence 的認可。",
+    disclaimer: "",
   },
   pilot: {
     eyebrow: "試點與設計夥伴",
@@ -142,9 +156,9 @@ const zhCn = {
   hero: {
     ...zhHk.hero,
     eyebrow: "企业 AI 与数据治理",
-    headline: "让人与 AI 智能体高效协作，让权限始终受控。",
-    body: "Mantle 是连接企业数据、人员与 AI 的治理层。企业可以清楚决定哪些数据可以使用、哪些模型可以接收、下一步可以执行什么，以及需要保留哪些审计证据。",
-    note: "为重视数据管控、问责与生产力的企业而设计。",
+    headline: "信任不是默认条件，而是治理的结果。",
+    body: "Mantle 管理 AI 工作背后的数据、模型、审批与证据，让员工安心使用 AI，也让企业清楚了解每个结果如何产生。",
+    note: "为信任不可妥协的机构而设计。",
     primaryCta: "申请试点",
     secondaryCta: "了解产品",
   },
@@ -189,6 +203,20 @@ const zhCn = {
     { title: "研究与教育", body: "处理敏感研究、行政及机构文件时，保留清晰控制与问责记录。" },
     { title: "受监管工作", body: "在权限、审批及证据完整的前提下，探索高效率的 AI 流程。" },
   ],
+  sectors: {
+    eyebrow: "适用机构",
+    title: "为信任不可妥协的机构而设计。",
+    body: "从银行、政府部门到学校和企业团队，Mantle 帮助机构在处理敏感数据时充分利用 AI，同时管好数据、模型、审批与证据。",
+    columns: { sector: "行业", help: "Mantle 如何提供帮助" },
+    rows: [
+      { sector: "企业及私营机构", help: "提升日常工作效率，同时避免客户数据和商业机密在未受控情况下外泄。" },
+      { sector: "政府及公共机构", help: "加快文件与个案审核，同时保护公民信息、财务数据、审批与决策记录。" },
+      { sector: "银行及金融服务", help: "在政策范围内使用 AI 支持 KYC、风险管理和合规工作，保护敏感金融数据。" },
+      { sector: "学校、大学及研究机构", help: "让教职员工充分利用 AI，同时保护学生隐私、研究数据及机构问责。" },
+      { sector: "专业服务", help: "在遵守客户保密要求、公司政策和获准模型范围的前提下，更快完成客户工作。" },
+      { sector: "受监管行业及关键服务", help: "探索高价值 AI 工作流，同时保留数据访问控制、人工审批及可追溯证据。" },
+    ],
+  },
   future: {
     ...zhHk.future,
     eyebrow: "未来方向 · Agent Workrooms",
@@ -213,13 +241,13 @@ const zhCn = {
   },
   strategicEcosystem: {
     ...zhHk.strategicEcosystem,
-    eyebrow: "战略科技生态",
-    title: "战略合作伙伴与科技生态",
-    intro: "与创始团队更广泛科技工作相关的合作关系及产业计划。",
+    eyebrow: "科技生态",
+    title: "战略合作伙伴",
+    intro: "",
     organisations: siteContent.strategicEcosystem.organisations.map((organisation) =>
       organisation.key === "nvidia" ? { ...organisation, note: "创始团队参与的产业计划" } : organisation,
     ),
-    disclaimer: "NVIDIA Inception 代表创始团队的创业项目经验。其他标志代表相关科技合作或生态关系，并不表示各机构对 Mantle Intelligence 的认可。",
+    disclaimer: "",
   },
   pilot: {
     eyebrow: "试点与设计伙伴",
