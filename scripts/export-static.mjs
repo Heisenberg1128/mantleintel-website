@@ -61,7 +61,7 @@ await writeFile(resolve(output, ".htaccess"), htaccess);
 const home = await readFile(resolve(output, "index.html"), "utf8");
 const traditionalHome = await readFile(resolve(output, "zh-hk/index.html"), "utf8");
 const simplifiedHome = await readFile(resolve(output, "zh-cn/index.html"), "utf8");
-if (!home.includes("Mantle Intelligence") || !home.includes("/company/") || !home.includes("令團隊善用 AI") || home.includes("<script") ||
+if (!home.includes("Mantle Intelligence") || !home.includes("/company/") || !home.includes("用 AI 做事，公司全程掌握") || home.includes("<script") ||
     !traditionalHome.includes("用好 AI，由管好資料開始") || !traditionalHome.includes("/zh-hk/product/") ||
     !simplifiedHome.includes("先管好数据") || !simplifiedHome.includes("/zh-cn/product/")) {
   throw new Error("Static export verification failed");
