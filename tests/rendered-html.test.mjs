@@ -116,7 +116,7 @@ test("language selector preserves the current public route", async () => {
   assert.match(html, /href="\/company\/"[^>]*hrefLang="en"/);
   assert.match(html, /href="\/zh-hk\/company\/"[^>]*hrefLang="zh-Hant"/);
   assert.match(html, /href="\/zh-cn\/company\/"[^>]*hrefLang="zh-Hans"/);
-  assert.match(html, /創辦團隊曾任職及就讀於/);
+  assert.match(html, /創辦團隊的工作及學歷背景/);
   assert.doesNotMatch(html, /Founding perspective|Built for serious organisations/);
 });
 
@@ -150,11 +150,12 @@ test("public navigation uses native links rather than the hosted client router",
  test("first visit renders Hong Kong Chinese and keeps an English home", async () => {
   const html = await (await render("/")).text();
   assert.match(html, /<html lang="zh-HK">/);
-  assert.match(html, /令團隊善用 AI，令企業掌握每一步/);
+  assert.match(html, /用 AI 做事，公司全程掌握/);
+  assert.match(html, /預約/);
   assert.ok(html.indexOf('class="brand-plate brand-plate-localized"') < html.indexOf('class="hk-hero-headline"'));
   assert.match(html, /href="\/en\/"[^>]*hrefLang="en"/);
   assert.match(html, /href="\/zh-hk\/contact\/"/);
-  assert.doesNotMatch(html, /信任不是預設條件|AI 賦能|申請試點/);
+  assert.doesNotMatch(html, /信任不是預設條件|AI 賦能|申請試點|洽談試用|讓/);
   const english = await (await render("/en/")).text();
   assert.match(english, /Trust is not assumed/);
  });
