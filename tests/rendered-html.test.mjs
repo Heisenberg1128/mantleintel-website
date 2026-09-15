@@ -11,34 +11,119 @@ async function render(path = "/", hostname = "localhost") {
   }, { waitUntil() {}, passThroughOnException() {} });
 }
 
-test("homepage renders the complete Mantle narrative", async () => {
-  const response = await render();
+test("homepage renders the revised Mantle narrative and clean navigation", async () => {
+  const response = await render("/en/");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Mantle Intelligence \| Control for Enterprise AI/);
-  assert.match(html, /Let people and AI agents work/);
-  assert.match(html, /Keep authority under control/);
-  assert.match(html, /See what leaves Mantle/);
-  assert.match(html, /AI understands\. Policy authorises\./);
-  assert.match(html, /Agent Workrooms are a product direction under development/);
-  assert.match(html, /mantle-brand-plate\.png/);
-  assert.match(html, /20\+ years/);
-  assert.match(html, /HKU MBA/);
-  for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "pilot"]) {
-    assert.match(html, new RegExp(`href="/\\#${target}"`));
+  assert.match(html, /Mantle Intelligence \| Enterprise AI &amp; Data Governance/);
+  assert.match(html, /Trust is not assumed\. It is governed\./);
+  assert.match(html, /Data governance for AI/);
+  assert.match(html, /Institutional judgement\. Operator execution\. Built in Hong Kong\./);
+  assert.match(html, /The founding team brings experience from/);
+  assert.match(html, /alt="J\.P\. Morgan"/);
+  assert.match(html, /alt="HKU Business School"/);
+  assert.doesNotMatch(html, /Two HKU MBA alumni|Selected professional backgrounds/);
+  assert.match(html, /AI adoption is moving faster than enterprise control/);
+  assert.match(html, /Only the approved context leaves Mantle/);
+  assert.match(html, /class="brand-plate brand-plate-localized"/);
+  assert.match(html, /class="brand-plate brand-plate-localized"[\s\S]*class="experience-band homepage-experience"[\s\S]*<\/figure>/);
+  assert.match(html, /Our Strategic Partners/);
+  assert.match(html, /NVIDIA Inception Program/);
+  assert.match(html, /Founder programme participation/);
+  assert.doesNotMatch(html, /AQTIF/);
+  assert.ok(html.indexOf("NVIDIA Inception Program") < html.indexOf(">Apple<"));
+  for (const logo of ["apple.svg", "nvidia.svg", "aws.png", "alibaba-cloud.svg", "microsoft.png"]) {
+    assert.match(html, new RegExp(`/ecosystem/${logo.replace(".", "\\.")}`));
   }
-  assert.match(html, /href="https:\/\/mantlecorps\.com"/);
-  assert.doesNotMatch(html, /Alfred Lee|>Harry</);
+  assert.match(html, /<span>Trust is not assumed\. It is governed\.<\/span>/);
+  assert.match(html, /CONTROL → EVIDENCE → TRUST/);
+  assert.doesNotMatch(html, /mantle-brand-plate\.png/);
+  assert.match(html, /<video[^>]*controls[^>]*aria-label="Mantle Product Demo"/);
+  assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
+  assert.match(html, /Click Play to watch with sound/);
+  assert.doesNotMatch(html, /@aqtif\.com/);
+  for (const target of ["product", "how-it-works", "use-cases", "vision", "company", "contact"]) {
+    assert.match(html, new RegExp(`href="/${target}/"`));
+  }
+  assert.doesNotMatch(html, /href="\/#/);
+  assert.doesNotMatch(html, /Product film placeholder|Mantle product demonstration video coming soon/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|trusted by leading|lorem ipsum/i);
 });
 
-test("legal routes are transparent placeholders", async () => {
-  for (const path of ["/privacy", "/terms"]) {
+test("use cases combine practical workflows with the client-sector matrix", async () => {
+  const html = await (await render("/use-cases/")).text();
+  assert.match(html, /Built for organisations where trust is non-negotiable\./);
+  assert.match(html, /Enterprise &amp; private sector/);
+  assert.match(html, /Government &amp; public sector/);
+  assert.match(html, /Banks &amp; financial services/);
+  assert.match(html, /Schools, universities &amp; research/);
+  assert.match(html, /Professional services/);
+  assert.match(html, /Regulated industries &amp; critical services/);
+  assert.match(html, /<table class="sector-table">/);
+  assert.match(html, /class="sector-emblem"/);
+  assert.match(html, /What Mantle helps with/);
+  assert.ok(html.indexOf("Built for organisations where trust is non-negotiable") < html.indexOf("Document review"));
+});
+
+test("the embedded product film is available across all three languages", async () => {
+  for (const path of ["/", "/zh-hk/", "/zh-cn/"]) {
+    const html = await (await render(path)).text();
+    assert.match(html, /<video[^>]*controls/);
+    assert.match(html, /src="\/demo\/mantle-product-demo\.mp4"/);
+    assert.doesNotMatch(html, /youtube(?:-nocookie)?\.com/);
+    assert.doesNotMatch(html, /Product film placeholder|產品影片預留位置|产品视频预留位置/);
+  }
+});
+
+test("pilot enquiries submit privately to both configured recipients", async () => {
+  const contactHtml = await (await render("/contact/")).text();
+  assert.match(contactHtml, /action="\/contact-submit\.php"/);
+  assert.doesNotMatch(contactHtml, /mailto:|@aqtif\.com/);
+
+  const handler = await readFile(new URL("../public/contact-submit.php", import.meta.url), "utf8");
+  assert.match(handler, /contact@aqtif\.com/);
+  assert.match(handler, /alfredlee2015@gmail\.com/);
+  assert.doesNotMatch(handler, /alfred@aqtif\.com/);
+});
+
+test("all corporate routes render directly", async () => {
+  const routes = ["/product/", "/how-it-works/", "/use-cases/", "/vision/", "/company/", "/contact/", "/privacy/", "/terms/"];
+  for (const path of routes) {
     const response = await render(path);
-    assert.equal(response.status, 200);
+    assert.equal(response.status, 200, path);
     const html = await response.text();
-    assert.match(html, /Counsel review required/);
-    assert.doesNotMatch(html, /SOC 2 compliant|ISO 27001 compliant|Fully GDPR compliant/i);
+    assert.match(html, /Mantle Intelligence/);
+  }
+});
+
+test("all public routes are available in Traditional and Simplified Chinese", async () => {
+  const routes = ["", "product/", "how-it-works/", "use-cases/", "vision/", "company/", "contact/", "privacy/", "terms/"];
+  for (const locale of ["zh-hk", "zh-cn"]) {
+    for (const route of routes) {
+      const path = `/${locale}/${route}`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      const html = await response.text();
+      assert.match(html, new RegExp(`href="/${locale}/"`));
+      assert.match(html, new RegExp(`href="/${locale}/product/"`));
+      assert.match(html, /Mantle Intelligence/);
+    }
+  }
+});
+
+test("language selector preserves the current public route", async () => {
+  const html = await (await render("/zh-hk/company/")).text();
+  assert.match(html, /href="\/company\/"[^>]*hrefLang="en"/);
+  assert.match(html, /href="\/zh-hk\/company\/"[^>]*hrefLang="zh-Hant"/);
+  assert.match(html, /href="\/zh-cn\/company\/"[^>]*hrefLang="zh-Hans"/);
+  assert.match(html, /創辦團隊曾任職及就讀於/);
+  assert.doesNotMatch(html, /Founding perspective|Built for serious organisations/);
+});
+
+test("claim discipline remains explicit", async () => {
+  for (const path of ["/", "/product/", "/vision/"]) {
+    const html = await (await render(path)).text();
+    assert.doesNotMatch(html, /SOC 2 compliant|ISO 27001 compliant|Fully GDPR compliant|trusted by|clients include/i);
   }
 });
 
@@ -50,9 +135,9 @@ test("SEO routes render", async () => {
 });
 
 test("www requests redirect to the canonical apex hostname", async () => {
-  const response = await render("/privacy?source=www", "www.mantleintel.com");
+  const response = await render("/product/?source=www", "www.mantleintel.com");
   assert.equal(response.status, 308);
-  assert.equal(response.headers.get("location"), "https://mantleintel.com/privacy?source=www");
+  assert.equal(response.headers.get("location"), "https://mantleintel.com/product/?source=www");
 });
 
 test("public navigation uses native links rather than the hosted client router", async () => {
@@ -61,3 +146,14 @@ test("public navigation uses native links rather than the hosted client router",
     assert.doesNotMatch(source, /next\/link|<Link\b/);
   }
 });
+
+ test("first visit renders Hong Kong Chinese and keeps an English home", async () => {
+  const html = await (await render("/")).text();
+  assert.match(html, /<html lang="zh-HK">/);
+  assert.match(html, /令團隊善用 AI，令企業掌握每一步/);
+  assert.match(html, /href="\/en\/"[^>]*hrefLang="en"/);
+  assert.match(html, /href="\/zh-hk\/contact\/"/);
+  assert.doesNotMatch(html, /信任不是預設條件|AI 賦能|申請試點/);
+  const english = await (await render("/en/")).text();
+  assert.match(english, /Trust is not assumed/);
+ });

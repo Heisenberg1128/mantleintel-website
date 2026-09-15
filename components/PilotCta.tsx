@@ -1,9 +1,10 @@
-import { siteContent } from "../content/site";
+import { contentByLocale, interfaceCopy, localizedPath, type Locale } from "../content/i18n";
 
-export function PilotCta() {
-  const { pilot } = siteContent;
+export function PilotCta({ locale = "en" }: { locale?: Locale }) {
+  const { pilot } = contentByLocale[locale];
+  const ui = interfaceCopy[locale];
   return (
-    <section className="pilot-section" id="pilot">
+    <section className="pilot-section">
       <div className="shell pilot-grid">
         <div>
           <p className="eyebrow light">{pilot.eyebrow}</p>
@@ -11,18 +12,12 @@ export function PilotCta() {
         </div>
         <div>
           <p>{pilot.body}</p>
-          {pilot.emailVerified ? (
-            <a className="button button-light" href={`mailto:${pilot.email}`}>Request a pilot <span aria-hidden="true">↗</span></a>
-          ) : (
-            <div className="contact-pending" role="note">
-              <span>Contact channel</span>
-              <strong>Business mailbox being configured</strong>
-              <small>The pilot enquiry address will be activated here.</small>
-            </div>
-          )}
+          <div className="pilot-actions">
+            <a className="button button-light" href={localizedPath(locale, "contact")}>{ui.requestPilot} <span aria-hidden="true">↗</span></a>
+            <small className="pilot-privacy">{ui.secureEnquiry}</small>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

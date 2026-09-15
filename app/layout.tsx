@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "../components/Analytics";
-import { siteContent } from "../content/site";
+import { contentByLocale } from "../content/i18n";
+const siteContent = contentByLocale["zh-hk"];
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -11,10 +12,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteContent.meta.canonicalUrl),
   title: siteContent.meta.title,
   description: siteContent.meta.description,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "zh-HK": "/", en: "/en/", "zh-CN": "/zh-cn/", "x-default": "/" } },
   applicationName: "Mantle Intelligence",
   openGraph: {
     type: "website",
+    locale: "zh_HK",
     url: "/",
     title: siteContent.meta.title,
     description: siteContent.meta.description,
@@ -27,12 +29,15 @@ export const metadata: Metadata = {
     description: siteContent.meta.description,
     images: ["/og.png"],
   },
-  icons: { icon: "/favicon.png", shortcut: "/favicon.png" },
+  icons: {
+    icon: [{ url: "/favicon-v2.svg?v=20260827", type: "image/svg+xml" }],
+    shortcut: "/favicon-v2.svg?v=20260827",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="zh-HK">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
         <Analytics />

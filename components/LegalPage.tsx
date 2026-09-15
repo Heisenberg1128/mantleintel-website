@@ -1,21 +1,22 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Native navigation is intentionally framework-independent. */
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { interfaceCopy, localizedPath, type Locale, type PublicRoute } from "../content/i18n";
 
-type Section = { title: string; body: string[] };
+type Section = { title: string; body: readonly string[] };
 
-export function LegalPage({ title, intro, sections }: { title: string; intro: string; sections: Section[] }) {
+export function LegalPage({ title, intro, sections, locale = "en", route }: { title: string; intro: string; sections: readonly Section[]; locale?: Locale; route: Extract<PublicRoute, "privacy" | "terms"> }) {
+  const ui = interfaceCopy[locale];
   return (
     <>
-      <Header />
-      <main className="legal-main">
+      <Header locale={locale} route={route} />
+      <main className="legal-main" lang={locale === "zh-hk" ? "zh-Hant" : locale === "zh-cn" ? "zh-Hans" : "en"}>
         <div className="shell legal-shell">
-          <a href="/" className="back-link">← Back to home</a>
-          <p className="eyebrow">Website notice · Counsel review required</p>
+          <a href={localizedPath(locale)} className="back-link">{ui.backHome}</a>
+          <p className="eyebrow">{ui.legalEyebrow}</p>
           <h1>{title}</h1>
           <p className="legal-intro">{intro}</p>
           <div className="legal-notice">
-            This is an early-stage website placeholder and is not final legal advice. It should be reviewed by qualified counsel before substantive product launch.
+            {ui.legalNotice}
           </div>
           {sections.map((section) => (
             <section key={section.title}>
@@ -25,7 +26,7 @@ export function LegalPage({ title, intro, sections }: { title: string; intro: st
           ))}
         </div>
       </main>
-      <Footer />
+      <Footer locale={locale} />
     </>
   );
 }
