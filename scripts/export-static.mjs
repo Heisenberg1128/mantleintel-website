@@ -28,11 +28,12 @@ async function render(pathname, destination, htmlLang = "en") {
   const target = resolve(output, destination);
   await mkdir(dirname(target), { recursive: true });
   const body = await response.text();
-  const rendered = response.headers.get("content-type")?.includes("text/html") ? staticHtml(body).replace('<html lang="en">', `<html lang="${htmlLang}">`) : body;
+  const rendered = response.headers.get("content-type")?.includes("text/html") ? staticHtml(body).replace(/<html lang="[^"]+">/, `<html lang="${htmlLang}">`) : body;
   await writeFile(target, rendered);
 }
 
-await render("/", "index.html");
+await render("/", "index.html", "zh-HK");
+await render("/en/", "en/index.html", "en");
 const publicRoutes = ["product", "how-it-works", "use-cases", "vision", "company", "contact", "privacy", "terms"];
 for (const route of publicRoutes) {
   await render(`/${route}/`, `${route}/index.html`);
@@ -60,8 +61,8 @@ await writeFile(resolve(output, ".htaccess"), htaccess);
 const home = await readFile(resolve(output, "index.html"), "utf8");
 const traditionalHome = await readFile(resolve(output, "zh-hk/index.html"), "utf8");
 const simplifiedHome = await readFile(resolve(output, "zh-cn/index.html"), "utf8");
-if (!home.includes("Mantle Intelligence") || !home.includes("/company/") || !home.includes("Data governance for AI") || home.includes("<script") ||
-    !traditionalHome.includes("先管好資料") || !traditionalHome.includes("/zh-hk/product/") ||
+if (!home.includes("Mantle Intelligence") || !home.includes("/company/") || !home.includes("讓團隊善用 AI") || home.includes("<script") ||
+    !traditionalHome.includes("用好 AI，由管好資料開始") || !traditionalHome.includes("/zh-hk/product/") ||
     !simplifiedHome.includes("先管好数据") || !simplifiedHome.includes("/zh-cn/product/")) {
   throw new Error("Static export verification failed");
 }

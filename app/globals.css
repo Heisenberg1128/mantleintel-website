@@ -638,3 +638,18 @@ h3 { font-size: 22px; line-height: 1.18; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Hong Kong Chinese: natural spacing and readable labels at every breakpoint. */
+:lang(zh-HK), :lang(zh-Hant) { font-family: "PingFang HK", "Noto Sans HK", "Microsoft JhengHei", sans-serif; }
+main:lang(zh-Hant) h1, main:lang(zh-Hant) h2, main:lang(zh-Hant) h3 { letter-spacing: 0; line-height: 1.35; word-break: normal; overflow-wrap: anywhere; }
+.hk-hero-headline { max-width: 1100px; margin: 40px auto; padding: 0 24px; font-size: clamp(2.2rem, 4.6vw, 4.5rem); font-weight: 650; text-align: center; text-wrap: balance; }
+:lang(zh-Hant) .brand-plate-localized { aspect-ratio: auto; min-height: 540px; }
+:lang(zh-Hant) .localized-plate-copy span { letter-spacing: 0; line-height: 1.65; }
+:lang(zh-Hant) .plate-trust { font-size: 14px; letter-spacing: 0; line-height: 1.65; }
+:lang(zh-Hant) .hero-support-body, :lang(zh-Hant) .section-heading > p:not(.eyebrow), :lang(zh-Hant) .route-hero p { line-height: 1.85; }
+:lang(zh-Hant) .eyebrow, :lang(zh-Hant) .experience-label, :lang(zh-Hant) .capability-list article small, :lang(zh-Hant) .sector-table thead th, :lang(zh-Hant) .governance-planes article > p { font-size: 14px; letter-spacing: .025em; }
+:lang(zh-Hant) .experience-note { font-size: 12px; line-height: 1.7; }
+:lang(zh-Hant) .hero-support { grid-template-columns: minmax(150px, .6fr) minmax(0, 1.35fr) minmax(280px, .85fr); gap: 28px; }
+:lang(zh-Hant) .hero-actions .button { white-space: nowrap; }
+@media (max-width: 1000px) { :lang(zh-Hant) .hero-support { grid-template-columns: 1fr; } :lang(zh-Hant) .hero-actions { max-width: 440px; } }
+@media (max-width: 760px) { .hk-hero-headline { margin: 25px auto 30px; padding-inline: 12px; text-align: left; } :lang(zh-Hant) .brand-plate-localized { min-height: 0; } }

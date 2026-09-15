@@ -40,7 +40,7 @@ export function PublicHome({ locale = "en" }: { locale?: Locale }) {
       <main lang={languageTag(locale)}>
         <section className="hero" id="product">
           <div className="shell hero-copy">
-            <h1 className="sr-only">Mantle Intelligence — {c.hero.headline}</h1>
+            <h1 className={locale === "zh-hk" ? "hk-hero-headline" : "sr-only"}>{locale === "zh-hk" ? c.hero.headline : `Mantle Intelligence — ${c.hero.headline}`}</h1>
             <BrandPlate locale={locale} />
             <StrategicEcosystem locale={locale} />
             <div className="hero-support">

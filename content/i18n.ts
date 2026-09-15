@@ -3,7 +3,7 @@ import { siteContent } from "./site";
 export type Locale = "en" | "zh-hk" | "zh-cn";
 export type PublicRoute = "" | "product" | "how-it-works" | "use-cases" | "vision" | "company" | "contact" | "privacy" | "terms";
 
-export const locales: Locale[] = ["en", "zh-hk", "zh-cn"];
+export const locales: Locale[] = ["zh-hk", "en", "zh-cn"];
 
 export const localeInfo = {
   en: { short: "EN", label: "English", htmlLang: "en" },
@@ -13,7 +13,7 @@ export const localeInfo = {
 
 export function localizedPath(locale: Locale, route: PublicRoute = "") {
   const suffix = route ? `${route}/` : "";
-  return locale === "en" ? `/${suffix}` : `/${locale}/${suffix}`;
+  return locale === "en" ? (route ? `/${suffix}` : "/en/") : `/${locale}/${suffix}`;
 }
 
 const experienceLogos = siteContent.foundingTeam.experienceLogos;
@@ -22,100 +22,100 @@ const zhHk = {
   ...siteContent,
   meta: {
     ...siteContent.meta,
-    title: "Mantle Intelligence｜企業 AI 與資料治理",
-    description: "Mantle 協助企業管控資料、人員與 AI 智能體的互動，涵蓋情境、權限、模型存取、審批與稽核證據。",
+    title: "Mantle Intelligence｜企業 AI 與資料保護",
+    description: "令團隊善用 AI 處理文件、分析資料及草擬內容，同時掌握資料分享、模型使用與審批紀錄。",
   },
   navigation: [
     { label: "產品", href: "/zh-hk/product/" },
     { label: "運作方式", href: "/zh-hk/how-it-works/" },
-    { label: "應用場景", href: "/zh-hk/use-cases/" },
+    { label: "行業應用", href: "/zh-hk/use-cases/" },
     { label: "願景", href: "/zh-hk/vision/" },
     { label: "關於我們", href: "/zh-hk/company/" },
   ],
   hero: {
     ...siteContent.hero,
-    eyebrow: "企業 AI 與資料治理",
-    headline: "信任不是預設條件，而是治理的結果。",
-    body: "Mantle 管理 AI 工作背後的資料、模型、審批與證據，讓員工安心使用 AI，也讓企業清楚知道每個結果如何產生。",
-    note: "為信任不可妥協的機構而設。",
-    primaryCta: "申請試點",
+    eyebrow: "企業 AI 平台｜資料保護與審批管理",
+    headline: "令團隊善用 AI，令企業掌握每一步。",
+    body: "文件審閱、資料分析、內容草擬，一個平台完成。Mantle 協助團隊在使用 AI 前處理敏感資料、選用獲准模型，並保留審批及使用紀錄。",
+    note: "為重視資料保密與責任分工的企業而設。",
+    primaryCta: "洽談試用",
     secondaryCta: "了解產品",
   },
   demo: {
     ...siteContent.demo,
     eyebrow: "產品示範",
-    headline: "清楚看見哪些內容會離開 Mantle。",
-    body: "資料送往外部模型之前，Mantle 會列出哪些內容保留、遮罩或移除，並說明原因。",
-    note: "只有經批准的內容才會離開 Mantle。",
+    headline: "傳送給 AI 的內容，先看清楚，再確認。",
+    body: "文件內哪些資料需要保密、哪些可以分享？Mantle 會列出建議處理方式，令您先核對，再傳送給 AI。",
+    note: "先審閱、後傳送，只向 AI 提供獲准使用的內容。",
     video: { ...siteContent.demo.video, title: "Mantle 產品示範" },
   },
   workflow: [
-    { title: "理解工作目標", body: "先確認使用者想完成甚麼，以及完成工作真正需要哪些資料。" },
-    { title: "檢查資料與情境", body: "根據用途、敏感程度及已聲明限制，檢查提示與文件內容。" },
-    { title: "套用企業政策", body: "由可驗證的企業規則，最終決定資料與模型的存取權限。" },
-    { title: "轉換並精簡資料", body: "資料跨越可信邊界前，按政策保留、遮罩、移除或交由人工覆核。" },
-    { title: "展示實際傳送內容", body: "讓使用者批准將要送出的完整內容，而非含糊的摘要。" },
-    { title: "選用合規模型", body: "只把已批准內容送往符合工作需要與資料級別的模型。" },
-    { title: "還原已批准內容", body: "僅在政策及流程容許時，才把已批准的遮罩值還原至結果。" },
-    { title: "保留安全證據", body: "記錄決策、審批、模型路由與獲准操作，但不保存已移除的原始資料。" },
+    { title: "說明工作需要", body: "說明您想完成的工作，並加入相關文件，令 AI 根據所需資料提供協助。" },
+    { title: "識別敏感資料", body: "檢查您的提問及附件，找出個人資料、商業機密及其他需要特別處理的內容。" },
+    { title: "按公司規則處理", body: "根據公司的資料保密及使用規則，決定哪些內容可以分享、哪些需要審批。" },
+    { title: "保護需要保密的內容", body: "保留工作所需資料；敏感內容可用代號取代、移除，或交由指定人員覆核。" },
+    { title: "確認傳送內容", body: "並排比較原文與處理後內容，確認實際傳送給 AI 的每一部分。" },
+    { title: "選用獲准模型", body: "根據公司政策及資料保密要求，使用獲准的 AI 模型完成工作。" },
+    { title: "按權限還原資料", body: "如政策允許，可在 Mantle 內將代號還原為原有資料；已移除的內容不會還原。" },
+    { title: "保留審批與使用紀錄", body: "記錄處理方式、使用模型及審批過程，方便日後查閱；紀錄不包含已移除的敏感內容。" },
   ],
-  controls: ["保留", "遮罩", "移除", "人工覆核"],
+  controls: ["保留", "隱藏敏感資料", "移除", "人工覆核"],
   planes: [
-    { label: "資料", question: "哪些資料可以使用？", detail: "分類 · 相關性 · 最少化 · 權限 · 保存" },
-    { label: "AI", question: "哪些模型可以接收？", detail: "模型資格 · 路由 · 私有或本地選項 · 政策" },
-    { label: "行動", question: "下一步可以做甚麼？", detail: "建議 · 批准 · 執行 · 到期 · 稽核" },
+    { label: "資料", question: "哪些資料可以使用？", detail: "識別敏感資料 · 按需要分享 · 設定保存期限" },
+    { label: "AI", question: "可以使用哪些 AI 模型？", detail: "獲准模型 · 企業專用部署 · 使用政策" },
+    { label: "行動", question: "下一步可以做甚麼？", detail: "審閱建議 · 指定人員審批 · 記錄操作" },
   ],
   capabilities: [
-    { title: "理解工作情境", status: "原型已提供", body: "根據實際工作判斷資料是否必要，而不是把所有欄位一律處理。" },
-    { title: "AI 資料治理", status: "架構開發中", body: "管控企業資料在 AI 流程中的分類、精簡、審批、傳送、路由、保存與證據。" },
-    { title: "政策執行", status: "原型已提供", body: "由確定的企業規則最終決定 AI 可以接收哪些內容。" },
-    { title: "完整傳送預覽", status: "原型已提供", body: "呼叫外部模型前，讓使用者及覆核者看見實際傳送的完整內容。" },
-    { title: "人工審批", status: "原型已提供", body: "遇到含糊或較高風險情況時交由人工判斷，而不是在背景自動放行。" },
-    { title: "多模型路由", status: "架構開發中", body: "根據工作、資料分類及企業政策，選用獲批准的模型路線。" },
-    { title: "稽核與證據", status: "原型已提供", body: "記錄 AI 工作的治理決策，同時避免保存已移除的原始資料。" },
-    { title: "權限管理", status: "架構開發中", body: "按企業授權範圍控制存取與行動，而不是單看模型能力。" },
+    { title: "按工作需要處理資料", status: "可於示範中體驗", body: "按文件用途及工作需要，建議保留或處理哪些資料。" },
+    { title: "AI 資料治理", status: "開發中", body: "由識別敏感內容到審批、分享及保存，逐步建立完整的資料管理流程。" },
+    { title: "按政策保護資料", status: "可於示範中體驗", body: "按公司設定的規則檢查內容，避免未獲批准的資料傳送給 AI。" },
+    { title: "傳送前核對內容", status: "可於示範中體驗", body: "傳送前展示完整內容，令員工及覆核人員確認哪些資料會交給 AI。" },
+    { title: "人工審批", status: "可於示範中體驗", body: "遇到需要判斷或較高風險的內容，先交由指定人員覆核。" },
+    { title: "靈活選用 AI 模型", status: "開發中", body: "按工作需要及保密要求，選用公司批准的模型。" },
+    { title: "使用與審批紀錄", status: "可於示範中體驗", body: "保留處理方式、模型使用及審批紀錄，方便日後追溯。" },
+    { title: "權限管理", status: "開發中", body: "按職責設定誰可以查看資料、使用模型及批准下一步操作。" },
   ],
   useCases: [
     { title: "文件審閱", body: "審閱資助申請，同時移除與工作無關的個人及銀行資料。" },
-    { title: "內部分析", body: "整理內部資料，而不必要地披露員工、客戶或交易層面的資訊。" },
-    { title: "專業服務", body: "在使用獲批准 AI 模型時，同步執行公司對客戶資料及對外分享的規則。" },
-    { title: "研究與教育", body: "處理敏感研究、行政及機構文件時，保留清晰控制與問責紀錄。" },
-    { title: "受監管工作", body: "在權限、審批及證據完整的前提下，探索具生產力的 AI 流程。" },
+    { title: "內部分析", body: "整理業務資料、草擬報告，同時減少披露與工作無關的員工、客戶及交易資料。" },
+    { title: "專業服務", body: "協助整理客戶文件及草擬意見，並按公司的保密要求處理資料。" },
+    { title: "研究與教育", body: "協助整理研究及行政文件，同時記錄資料的使用方式及審批過程。" },
+    { title: "受監管工作", body: "在清楚的權限及審批安排下，評估 AI 如何協助日常工作。" },
   ],
   sectors: {
     eyebrow: "適用機構",
-    title: "為信任不可妥協的機構而設。",
-    body: "由銀行、政府部門到學校及企業團隊，Mantle 協助機構在處理敏感資料時善用 AI，同時管好資料、模型、審批與證據。",
+    title: "為重視資料保密與責任分工的企業而設。",
+    body: "不同機構，面對同樣的問題：如何用好 AI，同時保護敏感資料？Mantle 從實際工作出發，協助團隊安排資料處理、模型使用及審批流程。",
     columns: { sector: "行業", help: "Mantle 如何協助" },
     rows: [
-      { sector: "企業及私人機構", help: "提升日常工作效率，同時避免客戶資料及商業機密在未受控情況下外洩。" },
+      { sector: "企業及私營機構", help: "提升日常工作效率，同時避免客戶資料及商業機密在未受控情況下外洩。" },
       { sector: "政府及公共機構", help: "加快文件與個案審閱，同時保護市民資料、財務資料、審批與決策紀錄。" },
-      { sector: "銀行及金融服務", help: "在政策範圍內使用 AI 支援 KYC、風險管理及合規工作，保護敏感金融資料。" },
-      { sector: "學校、大學及研究機構", help: "讓教職員善用 AI，同時保障學生私隱、研究資料及機構問責。" },
-      { sector: "專業服務", help: "在遵守客戶保密要求、公司政策及核准模型範圍下，更快完成客戶工作。" },
-      { sector: "受監管行業及關鍵服務", help: "探索高價值 AI 流程，同時保留資料存取控制、人工審批及可追溯證據。" },
+      { sector: "銀行及金融服務", help: "協助整理認識你的客戶（KYC）、風險管理及合規文件，並按政策處理敏感金融資料。" },
+      { sector: "學校、大學及研究機構", help: "協助教職員處理行政及研究工作，並按保密要求管理學生及研究資料。" },
+      { sector: "專業服務", help: "協助整理客戶文件及草擬報告，同時遵守保密要求與公司的 AI 使用規則。" },
+      { sector: "受監管行業及關鍵服務", help: "在指定權限及人工審批下評估 AI 應用，並保留可追溯的操作紀錄。" },
     ],
   },
   future: {
     ...siteContent.future,
     eyebrow: "未來方向 · Agent Workrooms",
-    headline: "由 AI 回答，走向受控的 AI 行動。",
-    body: "企業 AI 正由分析和草擬，走向擷取資料、更新系統及協調工作。真正稀缺的將是情境、權限、授權與證據。",
-    statement: "今天：管控 AI 可以看見和使用甚麼。未來：管控 AI 智能體可以執行甚麼。",
-    disclaimer: "Agent Workrooms 是未來產品方向，並不代表現時已具備可投入生產的自主執行能力。",
+    headline: "令 AI 協助更多工作，每一步都有清楚授權。",
+    body: "未來，AI 將可協助查找資料、更新系統及協調工作。Mantle 正探索如何在每一步加入清楚的權限、審批及操作紀錄。",
+    statement: "現階段：管理 AI 可以使用的資料。下一步：管理 AI 助手可以執行的工作。",
+    disclaimer: "Agent Workrooms 為規劃中的功能，目前尚未提供自主執行工作。",
   },
   foundingTeam: {
     ...siteContent.foundingTeam,
     eyebrow: "關於我們",
-    headline: "結合機構判斷與營運執行，立足香港。",
+    headline: "立足香港，結合金融、營運與科技經驗。",
     body: "Mantle Intelligence 由香港大學 MBA 校友團隊在香港創立。團隊經驗橫跨環球投資銀行、受監管金融、企業營運、區塊鏈、Web3 與新興科技。",
     experienceLabel: "創辦團隊曾任職及就讀於",
     experienceLogos,
     disclaimer: "以上機構只代表創辦團隊的工作及學術背景，並不表示任何合作、投資或認可。",
     pillars: [
-      { label: "機構金融", detail: "環球投資銀行、受監管金融服務及機構決策經驗。" },
+      { label: "金融專業", detail: "具備環球投資銀行及受監管金融服務的工作經驗。" },
       { label: "營運經驗", detail: "曾在企業、科技及數碼資產業務中負責實際營運與執行。" },
-      { label: "新興科技", detail: "具備區塊鏈、Web3 及高速發展科技生態的產品實踐經驗。" },
+      { label: "新興科技", detail: "曾參與區塊鏈、Web3 及新興科技產品的開發與應用。" },
     ],
   },
   strategicEcosystem: {
@@ -129,13 +129,13 @@ const zhHk = {
     disclaimer: "",
   },
   pilot: {
-    eyebrow: "試點與設計夥伴",
-    headline: "由一個真實 AI 流程開始。",
-    body: "選擇一個流程、一個團隊及一條真實政策界線，測試如何在不犧牲控制的前提下提升工作效率。",
+    eyebrow: "企業試用與合作",
+    headline: "從您團隊的日常工作開始。",
+    body: "告訴我們您想改善哪項工作，以及需要遵守的保密要求。我們會與您一起規劃合適的試用方式。",
   },
   footer: {
-    line: "為 AI 賦能企業提供清晰控制。",
-    origin: "建基香港，服務跨地域營運的企業。",
+    line: "善用 AI，掌握資料與審批。",
+    origin: "立足香港，面向亞洲及國際企業。",
   },
 };
 
@@ -270,10 +270,10 @@ export const interfaceCopy = {
     demoAlt: "Mantle product demonstration video", openPrototype: "Open live prototype", placeholderNote: "Click Play to watch with sound · captions included.", originalContext: "Original context", approvedPayload: "Approved payload", keep: "KEEP", mask: "MASK", remove: "REMOVE",
   },
   "zh-hk": {
-    home: "Mantle Intelligence 首頁", menu: "選單", requestPilot: "申請試點", explore: "探索", company: "公司", contact: "聯絡我們", privacy: "私隱政策", terms: "使用條款",
+    home: "Mantle Intelligence 首頁", menu: "目錄", requestPilot: "洽談試用", explore: "了解 Mantle", company: "公司", contact: "聯絡我們", privacy: "私隱政策", terms: "使用條款",
     secureEnquiry: "透過網站安全提交查詢。", copyright: "© 2026 Mantle Intelligence。保留所有權利。", swipe: "向右滑動 →", backHome: "← 返回首頁",
     legalEyebrow: "網站聲明 · 須由法律顧問審閱", legalNotice: "本頁內容是早期網站的暫擬版本，不構成最終法律意見。產品正式推出前，應交由合資格法律顧問審閱。",
-    demoAlt: "Mantle 產品示範影片", openPrototype: "開啟線上原型", placeholderNote: "按下播放即可連同聲音觀看 · 影片已附字幕。", originalContext: "原始內容", approvedPayload: "已批准內容", keep: "保留", mask: "遮罩", remove: "移除",
+    demoAlt: "Mantle 產品示範影片", openPrototype: "體驗產品示範", placeholderNote: "按播放觀看產品示範，影片附有聲音及字幕。", originalContext: "原始內容", approvedPayload: "已批准內容", keep: "保留", mask: "隱藏敏感資料", remove: "移除",
   },
   "zh-cn": {
     home: "Mantle Intelligence 首页", menu: "菜单", requestPilot: "申请试点", explore: "探索", company: "公司", contact: "联系我们", privacy: "隐私政策", terms: "使用条款",

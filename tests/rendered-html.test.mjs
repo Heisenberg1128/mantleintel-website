@@ -12,7 +12,7 @@ async function render(path = "/", hostname = "localhost") {
 }
 
 test("homepage renders the revised Mantle narrative and clean navigation", async () => {
-  const response = await render();
+  const response = await render("/en/");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Mantle Intelligence \| Enterprise AI &amp; Data Governance/);
@@ -146,3 +146,14 @@ test("public navigation uses native links rather than the hosted client router",
     assert.doesNotMatch(source, /next\/link|<Link\b/);
   }
 });
+
+ test("first visit renders Hong Kong Chinese and keeps an English home", async () => {
+  const html = await (await render("/")).text();
+  assert.match(html, /<html lang="zh-HK">/);
+  assert.match(html, /令團隊善用 AI，令企業掌握每一步/);
+  assert.match(html, /href="\/en\/"[^>]*hrefLang="en"/);
+  assert.match(html, /href="\/zh-hk\/contact\/"/);
+  assert.doesNotMatch(html, /信任不是預設條件|AI 賦能|申請試點/);
+  const english = await (await render("/en/")).text();
+  assert.match(english, /Trust is not assumed/);
+ });
