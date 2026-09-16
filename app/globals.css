@@ -715,25 +715,26 @@ h1, h2, h3 { color: var(--blue-deep); }
   z-index: 0;
   inset: 0;
   background-image:
-    repeating-linear-gradient(90deg, transparent 0 47px, rgba(32, 47, 53, .055) 48px 49px),
-    repeating-linear-gradient(0deg, transparent 0 19px, rgba(32, 47, 53, .04) 20px 21px);
-  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.28), transparent 42%, transparent 62%, rgba(0,0,0,.24));
-  mask-image: linear-gradient(90deg, rgba(0,0,0,.28), transparent 42%, transparent 62%, rgba(0,0,0,.24));
-  animation: ambient-grid 28s linear infinite;
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(32, 47, 53, .075) 48px 49px),
+    repeating-linear-gradient(0deg, transparent 0 19px, rgba(32, 47, 53, .055) 20px 21px);
+  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.52), rgba(0,0,0,.12) 43%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.48));
+  mask-image: linear-gradient(90deg, rgba(0,0,0,.52), rgba(0,0,0,.12) 43%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.48));
+  animation: ambient-grid 12s linear infinite;
 }
 .brand-plate::after {
   content: "";
   position: absolute;
   z-index: 0;
-  top: -28%;
-  right: -12%;
-  width: 58%;
-  height: 78%;
+  top: -24%;
+  right: -8%;
+  width: 64%;
+  height: 86%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(87, 159, 131, .12), rgba(71, 112, 153, .055) 48%, transparent 72%);
-  filter: blur(18px);
+  background: radial-gradient(circle, rgba(87, 159, 131, .20), rgba(71, 112, 153, .09) 48%, transparent 72%);
+  filter: blur(22px);
+  animation: ambient-drift 10s ease-in-out infinite alternate;
 }
-.brand-plate-localized > * { position: relative; }
+.localized-plate-copy, .localized-plate-diagram { position: relative; }
 .localized-plate-diagram { z-index: 1; }
 .localized-plate-copy { z-index: 2; }
 .localized-plate-copy strong { color: #131919; text-shadow: none; }
@@ -848,7 +849,11 @@ h1, h2, h3 { color: var(--blue-deep); }
 
 @keyframes ambient-grid {
   from { background-position: 0 0, 0 0; }
-  to { background-position: 98px 0, 0 84px; }
+  to { background-position: 196px 0, 0 168px; }
+}
+@keyframes ambient-drift {
+  from { opacity: .5; transform: translate3d(-18%, -2%, 0) scale(.94); }
+  to { opacity: .95; transform: translate3d(8%, 15%, 0) scale(1.08); }
 }
 @media (max-width: 820px) {
   .mobile-nav nav { border-color: var(--line); border-radius: 16px; background: #fff; }
