@@ -18,28 +18,20 @@ function BrandPlate({ locale }: { locale: Locale }) {
   const p = pageCopy[locale].home;
   return (
     <figure className="brand-plate brand-plate-localized" aria-label={`Mantle Intelligence。${p.plateTagline}`}>
-      <svg className="hero-data-network" viewBox="0 0 1600 760" preserveAspectRatio="none" aria-hidden="true">
-        <path className="data-route data-route-one" d="M-80 150 C180 48 350 270 610 178 S1030 62 1280 202 S1510 270 1680 142" />
-        <path className="data-route data-route-two" d="M-90 470 C190 330 420 610 715 452 S1160 292 1410 480 S1570 546 1680 430" />
-        <path className="data-route data-route-three" d="M110 790 C350 610 620 730 885 596 S1300 570 1640 344" />
-        <path className="data-flow data-flow-one" d="M-80 150 C180 48 350 270 610 178 S1030 62 1280 202 S1510 270 1680 142" />
-        <path className="data-flow data-flow-two" d="M-90 470 C190 330 420 610 715 452 S1160 292 1410 480 S1570 546 1680 430" />
-        <path className="data-flow data-flow-three" d="M110 790 C350 610 620 730 885 596 S1300 570 1640 344" />
+      <svg className="hero-data-network" viewBox="0 0 820 500" preserveAspectRatio="none" aria-hidden="true">
+        <path className="data-route data-route-one" d="M-30 118 C145 42 248 174 396 112 S625 70 850 166" />
+        <path className="data-route data-route-two" d="M-30 354 C155 242 282 406 462 316 S680 264 850 364" />
+        <path className="data-flow data-flow-one" d="M-30 118 C145 42 248 174 396 112 S625 70 850 166" />
+        <path className="data-flow data-flow-two" d="M-30 354 C155 242 282 406 462 316 S680 264 850 364" />
         <g className="data-junctions">
-          <circle cx="350" cy="202" r="8" /><circle cx="610" cy="178" r="6" />
-          <circle cx="1030" cy="112" r="7" /><circle cx="1280" cy="202" r="9" />
-          <circle cx="420" cy="520" r="7" /><circle cx="715" cy="452" r="9" />
-          <circle cx="1160" cy="350" r="6" /><circle cx="1410" cy="480" r="8" />
-          <circle cx="885" cy="596" r="7" />
+          <circle cx="248" cy="143" r="5" /><circle cx="396" cy="112" r="4" /><circle cx="625" cy="94" r="5" />
+          <circle cx="282" cy="370" r="4" /><circle cx="462" cy="316" r="5" /><circle cx="680" cy="292" r="4" />
         </g>
-        <circle className="data-packet data-packet-blue" r="7">
-          <animateMotion dur="9s" repeatCount="indefinite" path="M-80 150 C180 48 350 270 610 178 S1030 62 1280 202 S1510 270 1680 142" />
+        <circle className="data-packet data-packet-blue" r="4">
+          <animateMotion dur="12s" repeatCount="indefinite" path="M-30 118 C145 42 248 174 396 112 S625 70 850 166" />
         </circle>
-        <circle className="data-packet data-packet-green" r="6">
-          <animateMotion dur="11s" begin="-4s" repeatCount="indefinite" path="M-90 470 C190 330 420 610 715 452 S1160 292 1410 480 S1570 546 1680 430" />
-        </circle>
-        <circle className="data-packet data-packet-blue" r="5">
-          <animateMotion dur="10s" begin="-7s" repeatCount="indefinite" path="M110 790 C350 610 620 730 885 596 S1300 570 1640 344" />
+        <circle className="data-packet data-packet-green" r="4">
+          <animateMotion dur="14s" begin="-6s" repeatCount="indefinite" path="M-30 354 C155 242 282 406 462 316 S680 264 850 364" />
         </circle>
       </svg>
       <div className="localized-plate-copy"><strong>Mantle<br />Intelligence</strong><span>{p.plateTagline}</span></div>
